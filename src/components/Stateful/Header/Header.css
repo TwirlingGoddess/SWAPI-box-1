@@ -1,4 +1,8 @@
 .Header {
   width: 100%;
-  background-color: white;
-  height: 10vh; }
+  background-color: black;
+  height: 14vh; 
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}

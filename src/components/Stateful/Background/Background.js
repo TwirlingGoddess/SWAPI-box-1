@@ -5,10 +5,10 @@ class Background extends Component  {
   constructor() {
     super()
     this.state = {
-        randomCrawl: '',
-        crawlTitle:'',
-        cawlDate: ''
-      }
+      randomCrawl: '',
+      crawlTitle:'',
+      cawlDate: ''
+    }
   }
 
   componentDidMount () {
@@ -31,12 +31,15 @@ class Background extends Component  {
 
   render(){
     return (
-      <div >
-        
-        <h2 className='filmText'>{this.state.randomCrawl}</h2>
-        <h2 className='filmText'>{this.state.crawlTitle}</h2>
-        <h2 className='filmText'>{this.state.crawlDate}</h2>
-        
+      <div className='crawl board'>
+        <section className="intro">
+          A long time ago, in a galaxy far,far away.... 
+        </section>
+        <div className='content'>
+          <h2 className='filmText'>{this.state.randomCrawl}</h2>
+          <h2 className='filmText title'>{this.state.crawlTitle}</h2>
+          <h2 className='filmText subtitle'>{this.state.crawlDate}</h2>
+        </div>
       </div>
     )
   }
