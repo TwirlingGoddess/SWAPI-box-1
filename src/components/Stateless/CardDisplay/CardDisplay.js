@@ -5,7 +5,10 @@ import Card from '../Card/Card'
 
 const CardDisplay = (props) => {
   const selectedData = props.selectedData.map((data) => 
-    <Card data={data}/>
+    <Card 
+      data={data}
+      key= {Date.now()}
+    />
   )
 
   return (

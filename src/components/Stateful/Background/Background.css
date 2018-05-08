@@ -1,5 +1,6 @@
 .filmText {
-  color: white
+  color: white;
+  padding: 4vh;
 }
 
 .crawl {
@@ -8,17 +9,21 @@
   padding: 9vh;
 }
 
+
 .intro {
-  .intro {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    z-index: 1;
-    animation: intro 6s ease-out 1s;
-    color: rgb(75, 213, 238);
-    font-weight: 400;
-    font-size: 300%;
-    opacity: 0;
+  position: absolute;
+  top: 39%;
+  left: 25%;
+  z-index: 1;
+  -webkit-animation: intro 6s ease-out 1s;
+  animation: intro 6s ease-out 1s;
+  color: rgb(238, 75, 75);
+  font-weight: 400;
+  font-size: 12vh;
+  width: 50%;
+  text-shadow: 2px 2px #0c0b0b;
+  margin: auto;
+  opacity: 0;
 }
 
 @keyframes intro {
@@ -35,7 +40,7 @@
         opacity: 0;
     }
 }
-}
+
 
 p {
   color: #FFFF82;
@@ -48,14 +53,20 @@ p {
   transform-origin: 50% 100%;
   text-align: justify;
   position: absolute;
-  margin-left: -18em;
+  margin-left: -14em;
   font-weight: bold;
   overflow: hidden;
-  font-size: 350%;
-  height: 243em;
-  width: 18em;
+  font-size: 349%;
+  height: 60em;
+  width: 22em;
   bottom: 0;
   left: 50%;
+  line-height: 20vh;
+  color: red;
+  outline: none;
+  border-color: #fb0000;
+  -webkit-box-shadow: 0 0 10px #9ecaed;
+  box-shadow: 0 0 33px #f10303;
 }
 
 .board:after {
@@ -69,7 +80,7 @@ p {
 
 /* Set the scrolling animation and position it */
 .content {
-  animation: scroll 600s linear 36s;
+  animation: scroll 100s linear 5s;
   position: absolute;
   top: 100%;
 }

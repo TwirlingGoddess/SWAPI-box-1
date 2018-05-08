@@ -1,5 +1,7 @@
 import './Background.css'
 import React, { Component } from 'react'
+import mainAudio from '../../../assets/star-wars-theme-song.mp3'
+
 
 class Background extends Component  {
   constructor() {
@@ -29,17 +31,23 @@ class Background extends Component  {
 
   }
 
+
   render(){
     return (
-      <div className='crawl board'>
+      <div>
         <section className="intro">
           A long time ago, in a galaxy far,far away.... 
         </section>
-        <div className='content'>
-          <h2 className='filmText'>{this.state.randomCrawl}</h2>
-          <h2 className='filmText title'>{this.state.crawlTitle}</h2>
-          <h2 className='filmText subtitle'>{this.state.crawlDate}</h2>
+        <div className='crawl board'>
+          <div className='content'>
+            <h2 className='filmText'>{this.state.randomCrawl}</h2>
+            <h2 className='filmText title'>{this.state.crawlTitle}</h2>
+            <h2 className='filmText subtitle'>{this.state.crawlDate}</h2>
+          </div>
         </div>
+        <audio className="mainAudio" autoPlay loop>
+          <source src={mainAudio} />
+      </audio>
       </div>
     )
   }

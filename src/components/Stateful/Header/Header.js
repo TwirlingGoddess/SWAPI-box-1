@@ -13,6 +13,7 @@ class Header extends Component {
   render() {
     return (
       <div className='Header'>
+        <div className='logo'/>
         <Buttons makeApiCall={this.props.makeApiCall}/>
       </div>
     )
