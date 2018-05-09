@@ -20,6 +20,17 @@
   background-repeat: no-repeat;
 }
 
+.favoriteCard {
+  text-align: center;
+  box-sizing: border-box;
+  max-height: 60vh;
+  width: 36vh;
+  background-color: #0400ffe0;
+  margin-bottom: 7vh;
+  color: white;
+  line-height: 9vh;
+}
+
 .cardText {
   padding: 4vh;
 }

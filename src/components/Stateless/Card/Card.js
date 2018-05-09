@@ -4,6 +4,7 @@ import React from 'react'
 
 const Card = (props) => {
   console.log(props)
+  let click;
   const name = props.data.name
   const homeworld = props.data.homeworldName
   const species = props.data.specie
@@ -18,10 +19,15 @@ const Card = (props) => {
   const planetPopulation = props.data.planetPopulation
   const residents = props.data.residents
   
-  return (
-    <div className='card'  onClick={() => props.findCard(props)}>
-      <div className='favoriteBar'/> 
+  if (props.clicked) {
+    click ='favoriteCard'
+  } else {
+    click ='card' 
+  }
 
+  return (
+    <div className={click} onClick={() => props.findCard(props)}>
+      <div className='favoriteBar'/> 
       <div className='cardText'>
         <h2>{name}</h2>
         <h2>{homeworld}</h2>

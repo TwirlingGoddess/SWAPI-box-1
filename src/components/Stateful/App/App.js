@@ -10,7 +10,7 @@ class App extends Component {
     super()
     this.state = {
       favorites:[],
-      selectedData: [] ,
+      selectedData: [],
       loading: false
     }
   }
@@ -107,6 +107,9 @@ class App extends Component {
     });
     if (!duplicate){
       currentFavorites.push(card)
+    } else {
+      let index = currentFavorites.indexOf(card)
+      currentFavorites.splice(index, 1)
     }
     this.setState({
       favorites: currentFavorites
@@ -115,10 +118,12 @@ class App extends Component {
 
   displayFavorites = () => {
     const favoriteCards = this.state.favorites;
+    if (!favoriteCards.length){
+      console.log('no hay nada')
+    }
     this.setState({
       selectedData: favoriteCards
     })
-    console.log(this.state.selectedData)
   }
 
   render() {
@@ -130,8 +135,10 @@ class App extends Component {
             favoritesLength={this.state.favorites.length}
             displayFavorites={this.displayFavorites}
           />             
-          <CardDisplay selectedData={this.state.selectedData}
+          <CardDisplay 
+            selectedData={this.state.selectedData}
             findCard={this.findCard}
+            favorites={this.state.favorites}
           />
         </div>
       )

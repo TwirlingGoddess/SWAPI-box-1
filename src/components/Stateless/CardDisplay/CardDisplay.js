@@ -1,23 +1,34 @@
-import './CardDisplay.css'
-import React from 'react'
-import Card from '../Card/Card'
+import './CardDisplay.css';
+import React from 'react';
+import Card from '../Card/Card';
 
 
 const CardDisplay = (props) => {
-  const selectedData = props.selectedData.map((data, index) => 
-    <Card 
-      data={data}
-      key={index}
-      id={data.keyList + index}
-      findCard={props.findCard}
-    />
-  )
+  let clicked;
+  const selectedData = props.selectedData.map((data, index) => {
+    const findFavorites = props.favorites.map(favCard => favCard.id);
+    console.log('findddddd', findFavorites)
+    if (findFavorites.includes(data.id)) {
+      clicked = true;
+    } else {
+      clicked = false;
+    }
+    return (
+      <Card 
+        data={data}
+        key={index}
+        id={data.keyList + index}
+        clicked={clicked}
+        findCard={props.findCard}
+      />
+    );
+  });
 
   return (
     <div className='cardCointainer'>
       {selectedData}
     </div>
-  )
-}
+  );
+};
 
-export default CardDisplay
+export default CardDisplay;
