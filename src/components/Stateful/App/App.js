@@ -26,7 +26,6 @@ class App extends Component {
       });
   }
 
-
   cleanData = (dataObject) => {
     if(dataObject.next.includes('people')){
       return this.peopleObject(dataObject.results)
