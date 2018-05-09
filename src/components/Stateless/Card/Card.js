@@ -3,12 +3,15 @@ import React from 'react'
 
 
 const Card = (props) => {
-  
   const name = props.data.name
-  const homeworld = props.data.homeworld
-  const species = props.data.species
-  const population= props.data.population
-  console.log('incard',props)
+  const homeworld = props.data.homeworldName
+  const species = props.data.specie
+  const population= props.data.homeworldPopulation
+  const vehicleModel= props.data.vehicleModel
+  const vehicleClass= props.data.vehicleClass
+  const numberOfPassenger= props.data.numberOfPassenger
+  
+
 
   
   return (
@@ -17,6 +20,10 @@ const Card = (props) => {
       <h2>{homeworld}</h2>
       <h2>{species}</h2>
       <h2>{population}</h2>
+      <h2>{vehicleModel}</h2>
+      <h2>{vehicleClass}</h2>
+      <h2>{numberOfPassenger}</h2>
+      
     </div>
   )
 }
