@@ -16,6 +16,7 @@ class Header extends Component {
         <div className='logo'/>
         <Buttons makeApiCall={this.props.makeApiCall}
           favoritesLength={this.props.favoritesLength}
+          displayFavorites={this.props.displayFavorites}
         />
       </div>
     )

@@ -113,6 +113,14 @@ class App extends Component {
     })  
   }	   
 
+  displayFavorites = () => {
+    const favoriteCards = this.state.favorites;
+    this.setState({
+      selectedData: favoriteCards
+    })
+    console.log(this.state.selectedData)
+  }
+
   render() {
 
     if (this.state.selectedData.length){
@@ -120,6 +128,7 @@ class App extends Component {
         <div>
           <Header makeApiCall={this.makeApiCall} 
             favoritesLength={this.state.favorites.length}
+            displayFavorites={this.displayFavorites}
           />             
           <CardDisplay selectedData={this.state.selectedData}
             findCard={this.findCard}
@@ -131,8 +140,10 @@ class App extends Component {
     else if (!this.state.selectedData.length){
       return (
         <div className="App">
-          <Header makeApiCall={this.makeApiCall} 
+          <Header 
+            makeApiCall={this.makeApiCall} 
             favoritesLength={this.state.favorites.length}
+            displayFavorites={this.displayFavorites}          
           />   
           <Background />
         </div>
