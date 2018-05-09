@@ -19,7 +19,7 @@ const Card = (props) => {
   const residents = props.data.residents
   
   return (
-    <div className='card'>
+    <div className='card'  onClick={() => props.findCard(props)}>
       <div className='favoriteBar'/> 
 
       <div className='cardText'>

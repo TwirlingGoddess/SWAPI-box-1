@@ -9,7 +9,9 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      selectedData: [] 
+      favorites:[],
+      selectedData: [] ,
+      loading: false
     }
   }
 
@@ -37,37 +39,43 @@ class App extends Component {
   }
 
   peopleObject = async (parsedData) => {
-    const unresolvedPromises = parsedData.map( async(person) => {
+    const unresolvedPromises = parsedData.map( async(person,index) => {
+      const keyList = 'people'
       const homeworld = await this.nestedFetch(person.homeworld)
       const homeworldName = homeworld.name
       const homeworldPopulation = homeworld.population
       const specieObj = await this.nestedFetch(person.species)
       const specie = specieObj.name
       const name = person.name;
-      return {homeworldName, homeworldPopulation, specie, name}
+      const id = keyList + index;
+      return {id, keyList, homeworldName, homeworldPopulation, specie, name}
     })
     return Promise.all(unresolvedPromises)
   }
 
   planetObject = async (parsedData) => {
-    const unresolvedPromises = parsedData.map(async(planet) => {
+    const unresolvedPromises = parsedData.map(async(planet,index) => {
+      const keyList = 'planets'  
       const planetName = planet.name;
       const planetTerrain = planet.terrain;
       const planetPopulation = planet.population;
       const planetClimate = planet.climate;
       const residents = await this.residentsFetch(planet.residents)
-      return {planetName, planetTerrain, planetPopulation, planetClimate, residents}
+      const id = keyList + index;
+      return {id, keyList, planetName, planetTerrain, planetPopulation, planetClimate, residents}
     })
     return Promise.all(unresolvedPromises)
   }
 
   vehicleObject = (parsedData) => {
-    const vehicleArray = parsedData.map((vehicle) => {
+    const vehicleArray = parsedData.map((vehicle, index) => {
+      const keyList = 'vehicles' 
       const vehicleName = vehicle.name;
       const vehicleModel = vehicle.model;
       const vehicleClass = vehicle.vehicle_class;
       const numberOfPassengers = vehicle.passengers;
-      return {vehicleName, vehicleModel, vehicleClass, numberOfPassengers}
+      const id = keyList + index;
+      return {id, keyList, vehicleName, vehicleModel, vehicleClass, numberOfPassengers}
     })
     return vehicleArray;
   }
@@ -87,13 +95,30 @@ class App extends Component {
     return Promise.all(unresolvedPromises)
   }
 
+  findCard = (card) => {
+    const selectedCard = this.state.selectedData.find(data => card.data.id === data.id)
+    this.addCardToFavorites(selectedCard)
+  }
+
+  addCardToFavorites = (card) => {
+    const currentFavorites = this.state.favorites;
+    currentFavorites.push(card)
+    this.setState({
+      favorites: currentFavorites
+    })  
+  }	   
+
   render() {
 
     if (this.state.selectedData.length){
       return (
         <div>
-          <Header makeApiCall={this.makeApiCall} />             
-          <CardDisplay selectedData={this.state.selectedData}/>
+          <Header makeApiCall={this.makeApiCall} 
+             favoritesLength={this.state.favorites.length}
+          />             
+          <CardDisplay selectedData={this.state.selectedData}
+            findCard={this.findCard}
+          />
         </div>
       )
     }
@@ -101,7 +126,9 @@ class App extends Component {
     else if (!this.state.selectedData.length){
       return (
         <div className="App">
-          <Header makeApiCall={this.makeApiCall} />   
+          <Header makeApiCall={this.makeApiCall} 
+            favoritesLength={this.state.favorites.length}
+          />   
           <Background />
         </div>
       );

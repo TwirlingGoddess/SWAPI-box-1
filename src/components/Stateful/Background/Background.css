@@ -14,8 +14,9 @@
   position: relative;
   background-color: black;
   font-size: 5vh;
-  color: white;
-  text-align: center; }
+  color: #faebd794;
+  text-align: center;
+  text-shadow: 1px 1px darkred; }
 
 .intro {
   position: absolute;

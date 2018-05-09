@@ -5,10 +5,12 @@ import Card from '../Card/Card'
 
 const CardDisplay = (props) => {
   console.log(props)
-  const selectedData = props.selectedData.map((data) => 
+  const selectedData = props.selectedData.map((data, index) => 
     <Card 
       data={data}
-      key= {Date.now()}
+      key={index}
+      id={data.keyList + index}
+      findCard={props.findCard}
     />
   )
 
