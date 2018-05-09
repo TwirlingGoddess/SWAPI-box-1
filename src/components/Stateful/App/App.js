@@ -18,9 +18,9 @@ class App extends Component {
     const fetchURL = await fetch(url)
     const parseObject = await fetchURL.json()
     const cleanData = await this.cleanData(parseObject)
-      await this.setState({
-        selectedData: cleanData
-      })
+    await this.setState({
+      selectedData: cleanData
+    })
   }
 
 
@@ -38,77 +38,74 @@ class App extends Component {
 
   peopleObject = async (parsedData) => {
     const unresolvedPromises = parsedData.map( async(person) => {
-      const homeworld = await this.homeworldFetch(person.homeworld)
+      const homeworld = await this.nestedFetch(person.homeworld)
       const homeworldName = homeworld.name
       const homeworldPopulation = homeworld.population
-      const specie = await this.specieFetch(person.species)
+      const specieObj = await this.nestedFetch(person.species)
+      const specie = specieObj.name
       const name = person.name;
       return {homeworldName, homeworldPopulation, specie, name}
     })
     return Promise.all(unresolvedPromises)
   }
 
-  specieFetch = async (specie) => {
-    const fetchSpecie = await fetch(specie)
-    const parseSpecie = await fetchSpecie.json()
-    return parseSpecie.name
-  }
-
-  homeworldFetch = async (homeworld) => {
-    const fetchHomeworld = await fetch(homeworld)
-    const parseHomeworld = await fetchHomeworld.json()
-    return parseHomeworld
-  }
-
-
-
-  planetObject = (parsedData) => {
-    // console.log(parsedData)
-    // const unresolvedPromises = parsedData.map(async planet => {
-    //   return planet
-    // })
-
-    // console.log(unresolvedPromises)
-    // const unresolvedPromises = parsedData.map(async person => {
-    //   const fetchHomeworld = await fetch(person.homeworld)
-    //   const parseHomeworld = await fetchHomeworld.json();
-    //   return {...parseHomeworld, ...person}
-    // })
-    // return Promise.all(unresolvedPromises)
+  planetObject = async (parsedData) => {
+    const unresolvedPromises = parsedData.map(async(planet) => {
+      const planetName = planet.name;
+      const planetTerrain = planet.terrain;
+      const planetPopulation = planet.population;
+      const planetClimate = planet.climate;
+      const residents = await this.residentsFetch(planet.residents)
+      return {planetName, planetTerrain, planetPopulation, planetClimate, residents}
+    })
+    return Promise.all(unresolvedPromises)
   }
 
   vehicleObject = (parsedData) => {
     const vehicleArray = parsedData.map((vehicle) => {
-      const name = vehicle.name;
+      const vehicleName = vehicle.name;
       const vehicleModel = vehicle.model;
       const vehicleClass = vehicle.vehicle_class;
-      const numberOfPassenger = vehicle.numberOfPassenger;
-      console.log({name, vehicleModel, vehicleClass, numberOfPassenger})
-      return {name, vehicleModel, vehicleClass, numberOfPassenger}
+      const numberOfPassengers = vehicle.passengers;
+      return {vehicleName, vehicleModel, vehicleClass, numberOfPassengers}
     })
-    return vehicleArray
+    return vehicleArray;
   }
 
+  nestedFetch = async (url) => {
+    const fetchURL= await fetch(url)
+    const parseObject= await fetchURL.json()
+    return parseObject;
+  }
+
+  residentsFetch = async (residentsUrls) => {
+    const unresolvedPromises = residentsUrls.map(async(url) => {
+      const residentURLfetch = await fetch(url)
+      const parseResidents = await residentURLfetch.json()
+      return parseResidents.name;
+    })
+    return Promise.all(unresolvedPromises)
+  }
 
   render() {
-    if(this.state.selectedData.length){
+
+    if (this.state.selectedData.length){
       return (
         <div>
-          <Header makeApiCall={this.makeApiCall} />          
           <CardDisplay selectedData={this.state.selectedData}/>
         </div>
       )
     }
-
-    else {
+    
+    else if (!this.state.selectedData.length){
       return (
         <div className="App">
-          <Header makeApiCall={this.makeApiCall} />
+          <Header makeApiCall={this.makeApiCall} />   
           <Background />
         </div>
       );
     } 
-    
+      
   }
 }
 

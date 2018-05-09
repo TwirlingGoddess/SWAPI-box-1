@@ -43,13 +43,14 @@ class Background extends Component  {
         <div className='crawl board'>
           <div className='content'>
             <h2 className='filmText'>{this.state.randomCrawl}</h2>
-            <h2 className='filmText title'>{this.state.crawlTitle}</h2>
-            <h2 className='filmText subtitle'>{this.state.crawlDate}</h2>
+          </div>
+          <div className='introTitle'>
+            {this.state.crawlTitle}, {this.state.crawlDate}
           </div>
         </div>
         <audio className="mainAudio" autoPlay loop>
           <source src={mainAudio} />
-      </audio>
+        </audio>
       </div>
     )
   }
