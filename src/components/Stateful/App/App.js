@@ -40,36 +40,39 @@ class App extends Component {
 
   peopleObject = async (parsedData) => {
     const unresolvedPromises = parsedData.map( async(person) => {
+      const keyList = 'people'
       const homeworld = await this.nestedFetch(person.homeworld)
       const homeworldName = homeworld.name
       const homeworldPopulation = homeworld.population
       const specieObj = await this.nestedFetch(person.species)
       const specie = specieObj.name
       const name = person.name;
-      return {homeworldName, homeworldPopulation, specie, name}
+      return {keyList, homeworldName, homeworldPopulation, specie, name}
     })
     return Promise.all(unresolvedPromises)
   }
 
   planetObject = async (parsedData) => {
     const unresolvedPromises = parsedData.map(async(planet) => {
+      const keyList = 'planets'     
       const planetName = planet.name;
       const planetTerrain = planet.terrain;
       const planetPopulation = planet.population;
       const planetClimate = planet.climate;
       const residents = await this.residentsFetch(planet.residents)
-      return {planetName, planetTerrain, planetPopulation, planetClimate, residents}
+      return {keyList, planetName, planetTerrain, planetPopulation, planetClimate, residents}
     })
     return Promise.all(unresolvedPromises)
   }
 
   vehicleObject = (parsedData) => {
     const vehicleArray = parsedData.map((vehicle) => {
+      const keyList = 'vehicles'    
       const vehicleName = vehicle.name;
       const vehicleModel = vehicle.model;
       const vehicleClass = vehicle.vehicle_class;
       const numberOfPassengers = vehicle.passengers;
-      return {vehicleName, vehicleModel, vehicleClass, numberOfPassengers}
+      return {keyList, vehicleName, vehicleModel, vehicleClass, numberOfPassengers}
     })
     return vehicleArray;
   }
@@ -89,13 +92,23 @@ class App extends Component {
     return Promise.all(unresolvedPromises)
   }
 
+  findCard = (name) => {
+    console.log('in findcard',name)
+    const selectedCard = this.state.selectedData.find(card => console.log(card))
+    console.log(selectedCard);
+  }
+
+
   render() {
 
     if (this.state.selectedData.length){
       return (
         <div>
           <Header makeApiCall={this.makeApiCall} />             
-          <CardDisplay selectedData={this.state.selectedData}/>
+          <CardDisplay 
+            selectedData={this.state.selectedData}
+            findCard={this.findCard}
+          />
         </div>
       )
     }
