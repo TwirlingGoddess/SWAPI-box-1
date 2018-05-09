@@ -2,7 +2,6 @@ import './Background.css'
 import React, { Component } from 'react'
 import mainAudio from '../../../assets/star-wars-theme-song.mp3'
 
-
 class Background extends Component  {
   constructor() {
     super()
@@ -34,7 +33,6 @@ class Background extends Component  {
     })
 
   }
-
 
   render(){
     return (
