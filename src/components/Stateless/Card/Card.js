@@ -3,7 +3,7 @@ import React from 'react'
 
 
 const Card = (props) => {
-  console.log(props)
+  // console.log(props)
   const name = props.data.name
   const homeworld = props.data.homeworldName
   const species = props.data.specie

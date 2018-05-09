@@ -112,7 +112,9 @@ class App extends Component {
     if (this.state.selectedData.length){
       return (
         <div>
-          <Header makeApiCall={this.makeApiCall} />             
+          <Header makeApiCall={this.makeApiCall} 
+              favoritesLength={this.state.favorites.length}
+          />             
           <CardDisplay 
             selectedData={this.state.selectedData}
             findCard={this.findCard}
@@ -124,7 +126,10 @@ class App extends Component {
     else if (!this.state.selectedData.length){
       return (
         <div className="App">
-          <Header makeApiCall={this.makeApiCall} />   
+          <Header 
+            makeApiCall={this.makeApiCall} 
+            favoritesLength={this.state.favorites.length}
+          />   
           <Background />
         </div>
       );

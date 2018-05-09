@@ -1,4 +1,4 @@
-import './Buttons.css';
+import './Buttons.scss';
 import React, { Component } from 'react';
 
 
@@ -13,13 +13,13 @@ class Buttons extends Component {
   }
 
   render () {
+    const count = this.props.favoritesLength
   return (
     <div>
       <button className='people' onClick={() => this.makeAPIcall('people')}>People</button>
       <button className='planets' onClick={() => this.makeAPIcall('planets')}>Planets</button>
-      <button className='vehicles' onClick={() => this.makeAPIcall('vehicles')}>Vehicles</button>
-      
-      {/* <button className='favorite' onClick=''>Favorite</button> */}
+      <button className='vehicles' onClick={() => this.makeAPIcall('vehicles')}>Vehicles</button> 
+      <button className='favorite' onClick=''>Favorite:{count}</button>
     </div>
   )
 }
