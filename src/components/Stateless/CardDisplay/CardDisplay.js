@@ -4,7 +4,6 @@ import Card from '../Card/Card'
 
 
 const CardDisplay = (props) => {
-  console.log(props)
   const selectedData = props.selectedData.map((data, index) => 
     <Card 
       data={data}

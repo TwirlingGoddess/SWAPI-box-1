@@ -19,7 +19,7 @@ class Buttons extends Component {
       <button className='planets' onClick={() => this.makeAPIcall('planets')}>Planets</button>
       <button className='vehicles' onClick={() => this.makeAPIcall('vehicles')}>Vehicles</button>
       
-      {/* <button className='favorite' onClick=''>Favorite</button> */}
+      <button className='favorite' onClick=''>Favorite:{this.props.favoritesLength}</button>
     </div>
   )
 }

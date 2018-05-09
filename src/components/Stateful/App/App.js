@@ -102,7 +102,12 @@ class App extends Component {
 
   addCardToFavorites = (card) => {
     const currentFavorites = this.state.favorites;
-    currentFavorites.push(card)
+    const duplicate = currentFavorites.some(favCard => {
+      return favCard.id === card.id;
+    });
+    if (!duplicate){
+      currentFavorites.push(card)
+    }
     this.setState({
       favorites: currentFavorites
     })  
@@ -114,7 +119,7 @@ class App extends Component {
       return (
         <div>
           <Header makeApiCall={this.makeApiCall} 
-             favoritesLength={this.state.favorites.length}
+            favoritesLength={this.state.favorites.length}
           />             
           <CardDisplay selectedData={this.state.selectedData}
             findCard={this.findCard}
