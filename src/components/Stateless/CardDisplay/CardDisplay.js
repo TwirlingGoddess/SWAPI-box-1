@@ -8,7 +8,6 @@ const CardDisplay = (props) => {
     <Card 
       data={data}
       key={index}
-      id={data.keyList + index}
       findCard={props.findCard}
     />
   )

@@ -39,7 +39,7 @@ class App extends Component {
   }
 
   peopleObject = async (parsedData) => {
-    const unresolvedPromises = parsedData.map( async(person) => {
+    const unresolvedPromises = parsedData.map( async(person, index) => {
       const keyList = 'people'
       const homeworld = await this.nestedFetch(person.homeworld)
       const homeworldName = homeworld.name
@@ -47,7 +47,8 @@ class App extends Component {
       const specieObj = await this.nestedFetch(person.species)
       const specie = specieObj.name
       const name = person.name;
-      return {keyList, homeworldName, homeworldPopulation, specie, name}
+      const id = keyList + index;
+      return {id, keyList, homeworldName, homeworldPopulation, specie, name}
     })
     return Promise.all(unresolvedPromises)
   }
@@ -92,10 +93,17 @@ class App extends Component {
     return Promise.all(unresolvedPromises)
   }
 
-  findCard = (name) => {
-    console.log('in findcard',name)
-    const selectedCard = this.state.selectedData.find(card => console.log(card))
-    console.log(selectedCard);
+  findCard = (card) => {
+    const selectedCard = this.state.selectedData.find(data => card.data.id === data.id)
+    this.addCardToFavorites(selectedCard)
+  }
+
+  addCardToFavorites = (card) => {
+    const currentFavorites = this.state.favorites;
+    currentFavorites.push(card)
+    this.setState({
+      favorites: currentFavorites
+    })  
   }
 
 
