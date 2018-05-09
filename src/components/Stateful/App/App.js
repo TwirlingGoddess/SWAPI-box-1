@@ -9,7 +9,9 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      selectedData: [] 
+      selectedData: [],
+      loading: false,
+      favorites:[] 
     }
   }
 
