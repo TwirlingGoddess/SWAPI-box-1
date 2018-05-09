@@ -1,0 +1,113 @@
+.filmText {
+  color: white;
+  padding: 4vh;
+}
+
+.crawl {
+  background-color: black;
+  width: 40%;
+  padding: 9vh;
+}
+
+.introTitle {
+  margin-top: 159%;
+  width: 107%;
+  height: 18vh;
+  position: relative;
+  background-color: darkred;
+  font-size: 6vh;
+  color: white;
+  text-align: center;
+}
+
+
+.intro {
+  position: absolute;
+  top: 39%;
+  left: 25%;
+  z-index: 1;
+  -webkit-animation: intro 6s ease-out 1s;
+  animation: intro 6s ease-out 1s;
+  color: rgb(238, 75, 75);
+  font-weight: 400;
+  font-size: 12vh;
+  width: 50%;
+  text-shadow: 2px 2px #0c0b0b;
+  margin: auto;
+  opacity: 0;
+}
+
+@keyframes intro {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+p {
+  color: #FFFF82;
+}
+
+/* Set the font, lean the board, position it */
+.board {
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  -webkit-transform: perspective(300px) rotateX(25deg);
+  transform: perspective(364px) rotateX(20deg);
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  text-align: justify;
+  position: absolute;
+  margin-left: -14em;
+  font-weight: bold;
+  overflow: hidden;
+  font-size: 370%;
+  height: 26em;
+  width: 16em;
+  bottom: 0;
+  left: 50%;
+  line-height: 20vh;
+  color: red;
+  outline: none;
+  border-color: #fb0000;
+  -webkit-box-shadow: 0 0 10px #9ecaed;
+  box-shadow: 0 0 33px #f10303;
+}
+
+.board:after {
+  position: absolute;
+  content: ' ';
+  bottom: 60%;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+/* Set the scrolling animation and position it */
+.content {
+  animation: scroll 100s linear 5s;
+  position: absolute;
+  top: 100%;
+}
+
+.title, .subtitle {
+  text-align: center;
+}
+
+@keyframes scroll {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: -170%;
+    }
+}

@@ -2,13 +2,10 @@
   text-align: center;
   background-color: black;
   height: 100vh;
-  width: 100%; 
-  background-image: url('../../../assets/star_wars_kyloren_ren.gif');
+  width: 100%;
+  background-image: url("../../../assets/star_wars_kyloren_ren.gif");
   background-repeat: no-repeat;
-  background-size: cover
-}
-
-
+  background-size: cover; }
 
 @keyframes App-logo-spin {
   from {
@@ -16,17 +13,12 @@
   to {
     transform: rotate(360deg); } }
 
+body::-webkit-scrollbar {
+  width: 1em; }
 
-  body::-webkit-scrollbar {
-      width: 1em;
-  }
-   
-  body::-webkit-scrollbar-track {
-      -webkit-box-shadow: inset 0 0 6px rgba(250, 2, 2, 0.61);
-  }
-   
-  body::-webkit-scrollbar-thumb {
-    background-color: rgb(155, 6, 6);
-    outline: 1px solid rgb(109, 4, 4);
-  }
-  
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(250, 2, 2, 0.61); }
+
+body::-webkit-scrollbar-thumb {
+  background-color: #9b0606;
+  outline: 1px solid #6d0404; }

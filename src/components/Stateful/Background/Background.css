@@ -1,14 +1,21 @@
 .filmText {
   color: white;
-  padding: 4vh;
-}
+  padding: 4vh; }
 
 .crawl {
   background-color: black;
   width: 40%;
-  padding: 9vh;
-}
+  padding: 9vh; }
 
+.introTitle {
+  margin-top: 159%;
+  width: 107%;
+  height: 18vh;
+  position: relative;
+  background-color: darkred;
+  font-size: 6vh;
+  color: white;
+  text-align: center; }
 
 .intro {
   position: absolute;
@@ -17,34 +24,26 @@
   z-index: 1;
   -webkit-animation: intro 6s ease-out 1s;
   animation: intro 6s ease-out 1s;
-  color: rgb(238, 75, 75);
+  color: #ee4b4b;
   font-weight: 400;
   font-size: 12vh;
   width: 50%;
   text-shadow: 2px 2px #0c0b0b;
   margin: auto;
-  opacity: 0;
-}
+  opacity: 0; }
 
 @keyframes intro {
-    0% {
-        opacity: 0;
-    }
-    20% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
+  0% {
+    opacity: 0; }
+  20% {
+    opacity: 1; }
+  90% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 
 p {
-  color: #FFFF82;
-}
+  color: #FFFF82; }
 
 /* Set the font, lean the board, position it */
 .board {
@@ -60,7 +59,7 @@ p {
   font-weight: bold;
   overflow: hidden;
   font-size: 370%;
-  height: 28em;
+  height: 26em;
   width: 16em;
   bottom: 0;
   left: 50%;
@@ -69,8 +68,7 @@ p {
   outline: none;
   border-color: #fb0000;
   -webkit-box-shadow: 0 0 10px #9ecaed;
-  box-shadow: 0 0 33px #f10303;
-}
+  box-shadow: 0 0 33px #f10303; }
 
 .board:after {
   position: absolute;
@@ -78,25 +76,19 @@ p {
   bottom: 60%;
   left: 0;
   right: 0;
-  top: 0;
-}
+  top: 0; }
 
 /* Set the scrolling animation and position it */
 .content {
   animation: scroll 100s linear 5s;
   position: absolute;
-  top: 100%;
-}
+  top: 100%; }
 
 .title, .subtitle {
-  text-align: center;
-}
+  text-align: center; }
 
 @keyframes scroll {
-    0% {
-        top: 100%;
-    }
-    100% {
-        top: -170%;
-    }
-}
+  0% {
+    top: 100%; }
+  100% {
+    top: -170%; } }

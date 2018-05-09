@@ -6,16 +6,14 @@
   border-color: #9ecaed;
   -webkit-box-shadow: 0 0 10px #9ecaed;
   box-shadow: 0 0 10px #9ecaed;
-  text-align: center;
-}
+  text-align: center; }
 
 .logo {
-  background-image: url('../../../assets/SWFotJFAE_RedLogo.png');
+  background-image: url("../../../assets/SWFotJFAE_RedLogo.png");
   margin: 1vh auto auto 5vh;
   height: 11vh;
   width: 15vw;
   position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
-  cursor: pointer
-}
+  cursor: pointer; }
