@@ -1,8 +1,7 @@
 .card {
-  padding: 4vh;
   text-align: center;
   box-sizing: border-box;
-  height: 40vh;
+  max-height: 60vh;
   width: 36vh;
   background-color: #000000e0;
   -webkit-box-shadow: 90px 38px 85px 26px #ff000091;
@@ -10,3 +9,14 @@
   margin-bottom: 7vh;
   color: white;
   line-height: 9vh; }
+
+.favoriteBar {
+  background-image: url("https://www.shareicon.net/data/2015/09/14/100862_star-wars_512x512.png");
+  width: 100%;
+  height: 6vh;
+  background-size: contain;
+  background-color: white;
+  background-repeat: no-repeat; }
+
+.cardText {
+  padding: 4vh; }

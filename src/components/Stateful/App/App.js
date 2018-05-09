@@ -92,6 +92,7 @@ class App extends Component {
     if (this.state.selectedData.length){
       return (
         <div>
+          <Header makeApiCall={this.makeApiCall} />             
           <CardDisplay selectedData={this.state.selectedData}/>
         </div>
       )
