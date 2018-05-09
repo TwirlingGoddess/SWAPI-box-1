@@ -9,7 +9,7 @@ class Background extends Component  {
     this.state = {
       randomCrawl: '',
       crawlTitle:'',
-      cawlDate: ''
+      crawlDate: ''
     }
   }
 
@@ -27,7 +27,11 @@ class Background extends Component  {
     const randomCrawl = films[randomFilm].opening_crawl;
     const crawlTitle = films[randomFilm].title;
     const crawlDate = films[randomFilm].release_date;
-    this.setState({randomCrawl})
+    this.setState({
+      randomCrawl,
+      crawlTitle,
+      crawlDate
+    })
 
   }
 
@@ -36,7 +40,7 @@ class Background extends Component  {
     return (
       <div>
         <section className="intro">
-          A long time ago, in a galaxy far,far away.... 
+          A long time ago, in a galaxy far, far away.... 
         </section>
         <div className='crawl board'>
           <div className='content'>

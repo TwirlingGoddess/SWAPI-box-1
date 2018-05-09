@@ -1,5 +1,21 @@
 .Header {
   width: 100%;
-  background-color: white;
-  height: 10vh;
+  background-color: black;
+  height: 14vh;
+  outline: none;
+  border-color: #9ecaed;
+  -webkit-box-shadow: 0 0 10px #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+  text-align: center;
+}
+
+.logo {
+  background-image: url('../../../assets/SWFotJFAE_RedLogo.png');
+  margin: 1vh auto auto 5vh;
+  height: 11vh;
+  width: 15vw;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer
 }

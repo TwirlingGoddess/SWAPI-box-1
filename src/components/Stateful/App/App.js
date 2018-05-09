@@ -3,7 +3,6 @@ import '../../../reset.css'
 import Background from '../Background/Background'
 import CardDisplay from '../../Stateless/CardDisplay/CardDisplay'
 import Header from '../Header/Header'
-
 import './App.css';
 
 class App extends Component {
@@ -15,16 +14,62 @@ class App extends Component {
   }
 
   makeApiCall = (category) => {
-    fetch(`https://swapi.co/api/${category}`)
+    const url = `https://swapi.co/api/${category}`;
+    fetch(url)
       .then((response) => response.json())
-      .then(response => this.cleanData(response.results)).catch(error => { 
+      .then(response => this.cleanData(response))
+      .then((data) => this.setState({
+        selectedData: data
+      }))
+      .catch(error => { 
         console.error(error)
       });
   }
 
+
   cleanData = (dataObject) => {
-    this.setState({selectedData:dataObject})
+    if(dataObject.next.includes('people')){
+      return this.peopleObject(dataObject.results)
+    }
+    if(dataObject.next.includes('planets')){
+      return this.planetObject(dataObject.results)
+    }
+    if(dataObject.next.includes('vehicles')){
+      return this.vehicleObject(dataObject.results)
+    }
   }
+
+  peopleObject = (parsedData) => {
+    const unresolvedPromises = parsedData.map(async person => {
+      const fetchHomeworld = await fetch(person.homeworld)
+      const parseHomeworld = await fetchHomeworld.json();
+      return {...parseHomeworld, ...person}
+    })
+    return Promise.all(unresolvedPromises)
+  }
+
+  planetObject = (parsedData) => {
+    // const unresolvedPromises = parsedData.map(async person => {
+    //   const fetchHomeworld = await fetch(person.homeworld)
+    //   const parseHomeworld = await fetchHomeworld.json();
+    //   return {...parseHomeworld, ...person}
+    // })
+    // return Promise.all(unresolvedPromises)
+    console.log(parsedData.results,'in planet')
+    
+  }
+
+  vehicleObject = (parsedData) => {
+    // const unresolvedPromises = parsedData.map(async person => {
+    //   const fetchHomeworld = await fetch(person.homeworld)
+    //   const parseHomeworld = await fetchHomeworld.json();
+    //   return {...parseHomeworld, ...person}
+    // })
+    // return Promise.all(unresolvedPromises)
+    console.log(parsedData.results,'in vehicle')
+    
+  }
+
 
   render() {
     if(this.state.selectedData.length){

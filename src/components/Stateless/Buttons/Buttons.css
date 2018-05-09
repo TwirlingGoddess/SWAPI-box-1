@@ -1,5 +1,5 @@
 button {
-  background-image: url('../../../assets/star-wars-2369317_640.png');
+  background-image: url("../../../assets/star-wars-2369317_640.png");
   width: 25vh;
   height: 12vh;
   background-color: transparent;
@@ -10,5 +10,4 @@ button {
   font-size: 4vh;
   background-repeat: space;
   margin: 1vh;
-  cursor: pointer;
-}
+  cursor: pointer; }
