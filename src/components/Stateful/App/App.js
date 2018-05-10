@@ -51,11 +51,14 @@ class App extends Component {
   displayFavorites = () => {
     const favoriteCards = this.state.favorites;
     if (!favoriteCards.length){
-      console.log('no hay nada')
+      this.setState({
+        selectedData: null
+      })
+    } else {
+      this.setState({
+        selectedData: favoriteCards
+      })
     }
-    this.setState({
-      selectedData: favoriteCards
-    })
   }
 
   render() {
@@ -63,6 +66,14 @@ class App extends Component {
     if (this.state.loading === true) {
       return (
         <Load />
+      )
+    }
+
+    if (this.state.selectedData === null) {
+      return (
+        <div>
+          <h3>Addddddd</h3>
+        </div>
       )
     }
 

@@ -7,7 +7,6 @@ const CardDisplay = (props) => {
   let clicked;
   const selectedData = props.selectedData.map((data, index) => {
     const findFavorites = props.favorites.map(favCard => favCard.id);
-    console.log('findddddd', findFavorites)
     if (findFavorites.includes(data.id)) {
       clicked = true;
     } else {
