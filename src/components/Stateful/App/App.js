@@ -3,7 +3,7 @@ import '../../../reset.css'
 import Intro from '../Intro/Intro'
 import CardDisplay from '../../Stateless/CardDisplay/CardDisplay'
 import { NavLink, Route } from 'react-router-dom'
-import Header from '../Header/Header'
+import Header from '../../Stateless/Header/Header'
 import Helper from '../../Helper/Helper'
 import Load from '../../Stateless/Load/Load'
 import './App.css';

@@ -4,10 +4,8 @@ import PropTypes from 'prop-types';
 
 
 
-const Card = ({data,key,id,clicked,findCard}) => {
-  let click;
+const Card = ({data, id, clicked, findCard}) => {
   const card = data
-
   return (
     <div className={clicked ? 'favoriteCard' : 'card'  } onClick={() => findCard(data)}>
       <div className='favoriteBar'>
@@ -33,7 +31,7 @@ const Card = ({data,key,id,clicked,findCard}) => {
 
 Card.propTypes = {
   data: PropTypes.object.isRequired,
-  key: PropTypes.number.isRequired,
+  key: PropTypes.number,
   clicked: PropTypes.bool,
   findCard: PropTypes.func.isRequired,
 };
