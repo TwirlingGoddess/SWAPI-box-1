@@ -28,14 +28,13 @@ class App extends Component {
   }
 
   sendToLocalStorage = (selectedData) => {
-    localStorage.setItem('favorites', JSON.stringify(selectedData));
+    this.state.helper.sendToLocalStorage('favorites', selectedData)
   }
 
   componentDidMount() {
-    let favoriteCards = localStorage.getItem('favorites');
-    let parseFavCards = ('favorites', JSON.parse(favoriteCards));
+    let favoriteCards = this.state.helper.getFromLocalStorage('favorites');
     this.setState({
-      favorites: parseFavCards || []
+      favorites: favoriteCards || []
     })
   }
 

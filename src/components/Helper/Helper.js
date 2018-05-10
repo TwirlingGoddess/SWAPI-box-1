@@ -10,6 +10,7 @@ class Helper extends Component {
     const fetchURL = await fetch(url)
     const parseObject = await fetchURL.json()
     const cleanData = await this.cleanData(parseObject)
+    this.sendToLocalStorage(url, cleanData)
     return cleanData;
   }
  
@@ -82,6 +83,16 @@ class Helper extends Component {
     })
     return Promise.all(unresolvedPromises)
   }
+
+  sendToLocalStorage = (key, selectedData) => {
+    localStorage.setItem(key, JSON.stringify(selectedData));
+    
+  }
+
+  getFromLocalStorage = (key) => {
+    return JSON.parse(localStorage.getItem(key));
+  }
+
 
 }
 
