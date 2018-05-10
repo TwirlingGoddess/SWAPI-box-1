@@ -1,8 +1,8 @@
-import './Background.css'
+import './Intro.css'
 import React, { Component } from 'react'
 import mainAudio from '../../../assets/star-wars-theme-song.mp3'
 
-class Background extends Component  {
+class Intro extends Component  {
   constructor() {
     super()
     this.state = {
@@ -55,4 +55,4 @@ class Background extends Component  {
     )
   }
 }
-export default Background
+export default Intro

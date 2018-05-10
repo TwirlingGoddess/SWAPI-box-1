@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../../reset.css'
-import Background from '../Background/Background'
+import Intro from '../Intro/Intro'
 import CardDisplay from '../../Stateless/CardDisplay/CardDisplay'
 import Header from '../Header/Header'
 import './App.css';
@@ -128,6 +128,11 @@ class App extends Component {
 
   render() {
 
+    if (this.state.loading) {
+
+    }
+
+
     if (this.state.selectedData.length){
       return (
         <div>
@@ -152,7 +157,7 @@ class App extends Component {
             favoritesLength={this.state.favorites.length}
             displayFavorites={this.displayFavorites}          
           />   
-          <Background />
+          <Intro />
         </div>
       );
     } 
