@@ -36,7 +36,7 @@ class Helper extends Component {
       const specie = specieObj.name
       const name = person.name;
       const id = keyList + index;
-      return {id, keyList, homeworldName, homeworldPopulation, specie, name}
+      return {id, keyList, Homeworld: homeworldName, Population: homeworldPopulation, Specie: specie, Name:name}
     })
     return Promise.all(unresolvedPromises)
   }
@@ -51,7 +51,7 @@ class Helper extends Component {
       const planetClimate = planet.climate;
       const residents = await this.residentsFetch(planet.residents)
       const id = keyList + index;
-      return {id, keyList, planetName, planetTerrain, planetPopulation, planetClimate, residents}
+      return {id, keyList, Name: planetName, Terrain: planetTerrain, Population: planetPopulation, Climate: planetClimate, Residents: residents}
     })
     return Promise.all(unresolvedPromises)
   }
@@ -64,7 +64,7 @@ class Helper extends Component {
       const vehicleClass = vehicle.vehicle_class;
       const numberOfPassengers = vehicle.passengers;
       const id = keyList + index;
-      return {id, keyList, vehicleName, vehicleModel, vehicleClass, numberOfPassengers}
+      return {id, keyList, Name: vehicleName, Model: vehicleModel, Class: vehicleClass, Passengers:numberOfPassengers}
     })
     return vehicleArray;
   }
@@ -86,7 +86,6 @@ class Helper extends Component {
 
   sendToLocalStorage = (key, selectedData) => {
     localStorage.setItem(key, JSON.stringify(selectedData));
-    
   }
 
   getFromLocalStorage = (key) => {

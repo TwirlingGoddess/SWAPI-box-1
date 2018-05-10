@@ -2,48 +2,27 @@ import './Card.css'
 import React from 'react'
 
 
-const Card = (props) => {
-  console.log(props)
+const Card = ({data,key,id,clicked,findCard}) => {
   let click;
-  const name = props.data.name
-  const homeworld = props.data.homeworldName
-  const species = props.data.specie
-  const population = props.data.homeworldPopulation
-  const vehicleName = props.data.vehicleName
-  const vehicleModel = props.data.vehicleModel
-  const vehicleClass = props.data.vehicleClass
-  const numberOfPassengers = props.data.numberOfPassengers
-  const planetName = props.data.planetName
-  const planetTerrain = props.data.planetTerrain
-  const planetClimate = props.data.planetClimate
-  const planetPopulation = props.data.planetPopulation
-  const residents = props.data.residents
-  
-  if (props.clicked) {
-    click ='favoriteCard'
-  } else {
-    click ='card' 
-  }
+  const card = data
 
   return (
-    <div className={click} onClick={() => props.findCard(props)}>
+    <div className={clicked ? 'favoriteCard' : 'card'  } onClick={() => findCard(data)}>
       <div className='favoriteBar'>
-        <h2 className='name'>{name}</h2>
-        <h2 className='name'>{vehicleName}</h2>      
-        <h2 className='name'>{planetName}</h2>        
+        <h2 className='name'>{'Name' + card.Name}</h2>
       </div> 
       <div className='cardText'> 
-        <h2>{homeworld}</h2>
-        <h2>{species}</h2>
-        <h2>{population}</h2>
-        <h2>{vehicleModel}</h2>
-        <h2>{vehicleClass}</h2>
-        <h2>{numberOfPassengers}</h2>
-        <h2>{planetTerrain}</h2>      
-        <h2>{planetClimate}</h2>
-        <h2>{planetPopulation}</h2>
+        <h2>{card.Homeworld}</h2>
+        <h2>{card.Specie}</h2>
+        <h2>{card.Population}</h2>
+        <h2>{card.Model}</h2>
+        <h2>{card.Class}</h2>
+        <h2>{card.Passengers}</h2>
+        <h2>{card.Terrain}</h2>      
+        <h2>{card.Climate}</h2>
+        <h2>{card.Population}</h2>
         <div className='redidentsBox'>
-          <h2 className='residents'>{residents}</h2>
+          <h2 className='residents'>{card.Residents}</h2>
         </div>
       </div>
     </div>

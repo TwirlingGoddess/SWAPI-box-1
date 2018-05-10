@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../../../reset.css'
 import Intro from '../Intro/Intro'
 import CardDisplay from '../../Stateless/CardDisplay/CardDisplay'
+import { NavLink, Route } from 'react-router-dom'
 import Header from '../Header/Header'
 import Helper from '../../Helper/Helper'
 import Load from '../../Stateless/Load/Load'
@@ -9,7 +10,7 @@ import './App.css';
 
 class App extends Component {
   constructor () {
-    super()
+    super();
     this.state = {
       favorites:[],
       selectedData: [],
@@ -20,9 +21,10 @@ class App extends Component {
 
   makeApiCall = async (category) => {
     this.setState({loading:true})
-    const selectedData = await this.state.helper.makeApiCall(category)
+    const selectedCategory = await this.state.helper.makeApiCall(category);
+    await this.state.helper.sendToLocalStorage('selectedData', selectedCategory)
     return this.setState({
-      selectedData: selectedData,
+      selectedData: selectedCategory,
       loading: false
     })
   }
@@ -33,13 +35,15 @@ class App extends Component {
 
   componentDidMount() {
     let favoriteCards = this.state.helper.getFromLocalStorage('favorites');
+    let savedData = this.state.helper.getFromLocalStorage('selectedData');
     this.setState({
-      favorites: favoriteCards || []
+      favorites: favoriteCards || [],
+      selectedData: savedData || []
     })
   }
 
   findCard = (card) => {
-    const selectedCard = this.state.selectedData.find(data => card.data.id === data.id)
+    const selectedCard = this.state.selectedData.find(data => card.id === data.id)
     this.addCardToFavorites(selectedCard)
   }
 
@@ -74,7 +78,9 @@ class App extends Component {
   }
 
   render() {
+    const {selectedData, favorites} = this.state;
 
+    <Route exact path='/' component={Intro} />
     if (this.state.loading === true) {
       return (
         <Load />
@@ -93,11 +99,11 @@ class App extends Component {
       return (
         <div>
           <Header makeApiCall={this.makeApiCall} 
-            favoritesLength={this.state.favorites.length}
+            favoritesLength={favorites.length}
             displayFavorites={this.displayFavorites}
           />             
           <CardDisplay 
-            selectedData={this.state.selectedData}
+            selectedData={selectedData}
             findCard={this.findCard}
             favorites={this.state.favorites}
           />
@@ -105,12 +111,12 @@ class App extends Component {
       )
     }
     
-    else if (!this.state.selectedData.length){
+    else if (!selectedData.length){
       return (
         <div className="App">
           <Header 
             makeApiCall={this.makeApiCall} 
-            favoritesLength={this.state.favorites.length}
+            favoritesLength={favorites.length}
             displayFavorites={this.displayFavorites}          
           />   
           <Intro />

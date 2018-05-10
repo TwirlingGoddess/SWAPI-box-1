@@ -3,10 +3,10 @@ import React from 'react';
 import Card from '../Card/Card';
 
 
-const CardDisplay = (props) => {
+const CardDisplay = ({selectedData,findCard,favorites}) => {
   let clicked;
-  const selectedData = props.selectedData.map((data, index) => {
-    const findFavorites = props.favorites.map(favCard => favCard.id);
+  const displayCards = selectedData.map((data, index) => {
+    const findFavorites = favorites.map(favCard => favCard.id);
     if (findFavorites.includes(data.id)) {
       clicked = true;
     } else {
@@ -18,14 +18,14 @@ const CardDisplay = (props) => {
         key={index}
         id={data.keyList + index}
         clicked={clicked}
-        findCard={props.findCard}
+        findCard={findCard}
       />
     );
   });
 
   return (
     <div className='cardCointainer'>
-      {selectedData}
+      {displayCards}
     </div>
   );
 };

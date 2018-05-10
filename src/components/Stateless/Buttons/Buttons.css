@@ -11,3 +11,8 @@ button {
   background-repeat: space;
   margin: 1vh;
   cursor: pointer; }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
