@@ -5,7 +5,6 @@
   max-height: 60vh;
   width: 36vh;
   background-color: #000000e0;
-  /* -webkit-box-shadow: 90px 38px 85px 26px #ff000091; */
   box-shadow: 1px -2px 20px 2px #ff000091;
   margin-bottom: 7vh;
   color: white;
@@ -29,12 +28,14 @@
   max-height: 60vh;
   width: 36vh;
   margin-bottom: 7vh;
-  color: rgb(0, 0, 0);
+  color: white;
   line-height: 9vh;
   cursor: pointer;
   background: -webkit-linear-gradient(transparent, transparent),
   -webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgba(163,126,67,1) 45%, rgba(145,112,59,1) 61%, rgba(213,173,109,1) 100%);
   background: -o-linear-gradient(transparent, transparent);
+  box-shadow: 1px -2px 20px 2px #1602c5ad;
+  
 }
 
 .cardText {
@@ -52,5 +53,5 @@ h2 {
 }
 
 .residentsBox {
-  
+
 }

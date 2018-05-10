@@ -27,6 +27,19 @@ class App extends Component {
     })
   }
 
+  sendToLocalStorage = (selectedData) => {
+    localStorage.setItem('favorites', JSON.stringify(selectedData));
+  }
+
+  componentDidMount() {
+    let favoriteCards = localStorage.getItem('favorites');
+    let parseFavCards = ('favorites', JSON.parse(favoriteCards));
+    console.log('in parse',parseFavCards)
+    this.setState({
+      favorites: parseFavCards
+    })
+  }
+
   findCard = (card) => {
     const selectedCard = this.state.selectedData.find(data => card.data.id === data.id)
     this.addCardToFavorites(selectedCard)
@@ -39,6 +52,7 @@ class App extends Component {
     });
     if (!duplicate){
       currentFavorites.push(card)
+      this.sendToLocalStorage(currentFavorites)     
     } else {
       let index = currentFavorites.indexOf(card)
       currentFavorites.splice(index, 1)

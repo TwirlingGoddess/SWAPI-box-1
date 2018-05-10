@@ -1,4 +1,5 @@
 .cardCointainer {
+  min-height: 100vh;
   padding: 11vh;
   background-image: url("../../../assets/ea_star_wars_darth_vader.0.jpg");
   margin: auto;
