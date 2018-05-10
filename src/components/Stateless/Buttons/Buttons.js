@@ -1,6 +1,7 @@
 import './Buttons.css';
 import React, { Component } from 'react';
 import { NavLink, Route } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 
 
@@ -15,6 +16,12 @@ const Buttons = (props) => {
     </div>
   )
 }
+
+Buttons.propTypes = {
+  makeApiCall: PropTypes.func.isRequiered,
+  favoritesLength: PropTypes.number.isRequired,
+  displayFavorites: PropTypes.func.isRequired
+};
 
 
 export default Buttons;

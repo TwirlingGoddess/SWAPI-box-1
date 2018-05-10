@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import './Header.css'
 import Buttons from '../../Stateless/Buttons/Buttons'
 import { NavLink, Route } from 'react-router-dom'
+import PropTypes from 'prop-types';
+
 
 
 class Header extends Component {
@@ -21,6 +23,12 @@ class Header extends Component {
       </div>
     )
   }
+}
+
+Header.propTypes = {
+  makeApiCall: PropTypes.func.isRequiered,
+  favoritesLength: PropTypes.number.isRequired,
+  displayFavorites: PropTypes.func.isRequired
 }
 
 export default Header

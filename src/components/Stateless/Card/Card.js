@@ -1,5 +1,7 @@
 import './Card.css'
 import React from 'react'
+import PropTypes from 'prop-types';
+
 
 
 const Card = ({data,key,id,clicked,findCard}) => {
@@ -28,5 +30,13 @@ const Card = ({data,key,id,clicked,findCard}) => {
     </div>
   )
 }
+
+Card.propTypes = {
+  data: PropTypes.object.isRequired,
+  key: PropTypes.number.isRequired,
+  clicked: PropTypes.bool,
+  findCard: PropTypes.func.isRequired,
+};
+
 
 export default Card

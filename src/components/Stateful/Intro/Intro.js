@@ -2,6 +2,7 @@ import './Intro.css'
 import React, { Component } from 'react'
 import mainAudio from '../../../assets/star-wars-theme-song.mp3'
 
+
 class Intro extends Component  {
   constructor() {
     super()
@@ -55,4 +56,6 @@ class Intro extends Component  {
     )
   }
 }
+
+
 export default Intro
