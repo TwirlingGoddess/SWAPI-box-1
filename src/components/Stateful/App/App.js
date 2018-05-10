@@ -4,6 +4,7 @@ import Intro from '../Intro/Intro'
 import CardDisplay from '../../Stateless/CardDisplay/CardDisplay'
 import Header from '../Header/Header'
 import Helper from '../../Helper/Helper'
+import Load from '../../Stateless/Load/Load'
 import './App.css';
 
 class App extends Component {
@@ -18,8 +19,12 @@ class App extends Component {
   }
 
   makeApiCall = async (category) => {
+    this.setState({loading:true})
     const selectedData = await this.state.helper.makeApiCall(category)
-    return this.setState({selectedData: selectedData})
+    return this.setState({
+      selectedData: selectedData,
+      loading: false
+    })
   }
 
   findCard = (card) => {
@@ -55,12 +60,13 @@ class App extends Component {
 
   render() {
 
-    if (this.state.loading) {
-
+    if (this.state.loading === true) {
+      return (
+        <Load />
+      )
     }
 
-
-    if (this.state.selectedData.length){
+    if (this.state.selectedData.length && this.state.loading === false){
       return (
         <div>
           <Header makeApiCall={this.makeApiCall} 

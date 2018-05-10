@@ -1,0 +1,50 @@
+.videoBox {
+  height: 80vh;
+  margin: auto;
+  width: 80%;
+  background-color: black;
+  background-image: url("https://media.giphy.com/media/30ifKaUVWL7EI/giphy.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  text-align: center;
+  border-color: #ed9e9e;
+  box-shadow: 0 0 10px #d30e0e; }
+
+.background {
+  padding-top: 5%;
+  height: 100vh;
+  background-color: black;
+  box-sizing: border-box; }
+
+.loader {
+  margin: 15% 35%;
+  border-radius: 50%;
+  z-index: 30;
+  position: absolute;
+  border-top: 16px solid black;
+  border-bottom: 16px solid red;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite; }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+.videoBox h2 {
+  position: absolute;
+  font-size: 10vh;
+  color: #d41f1f;
+  text-shadow: 1px 1px #020101;
+  margin-top: 10vh;
+  margin-left: 30%; }
