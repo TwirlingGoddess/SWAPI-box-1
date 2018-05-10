@@ -35,7 +35,7 @@ class App extends Component {
     let favoriteCards = localStorage.getItem('favorites');
     let parseFavCards = ('favorites', JSON.parse(favoriteCards));
     this.setState({
-      favorites: parseFavCards
+      favorites: parseFavCards || []
     })
   }
 
