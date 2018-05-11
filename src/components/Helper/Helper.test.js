@@ -1,7 +1,7 @@
 import React from 'react';
 import Helper from './Helper';
 import { shallow } from 'enzyme';
-
+jest.autoMockOn()
 
   describe ('helper', () => {
   let helper;

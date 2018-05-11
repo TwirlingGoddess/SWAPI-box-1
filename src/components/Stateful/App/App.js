@@ -4,7 +4,7 @@ import Intro from '../Intro/Intro'
 import CardDisplay from '../../Stateless/CardDisplay/CardDisplay'
 import { NavLink, Route } from 'react-router-dom'
 import Header from '../../Stateless/Header/Header'
-import Helper from '../../Helper/Helper'
+import {makeApiCall, sendToLocalStorage, getFromLocalStorage} from '../../Helper/Helper'
 import Load from '../../Stateless/Load/Load'
 import './App.css';
 
@@ -15,27 +15,26 @@ class App extends Component {
       favorites:[],
       selectedData: [],
       loading: false,
-      helper: new Helper()
     }
   }
 
   apiCall = async (category) => {
     this.setState({loading:true})
-    const selectedCategory = await this.state.helper.makeApiCall(category);
-    await this.state.helper.sendToLocalStorage('selectedData', selectedCategory)
+    const selectedCategory = await makeApiCall(category);
+    await sendToLocalStorage('selectedData', selectedCategory)
     return this.setState({
       selectedData: selectedCategory,
       loading: false
     })
   }
 
-  sendToLocalStorage = (selectedData) => {
-    this.state.helper.sendToLocalStorage('favorites', selectedData)
+  saveToLocalStorage = (selectedData) => {
+    sendToLocalStorage('favorites', selectedData)
   }
  
   componentDidMount() {
-    let favoriteCards = this.state.helper.getFromLocalStorage('favorites');
-    let savedData = this.state.helper.getFromLocalStorage('selectedData');
+    let favoriteCards = getFromLocalStorage('favorites');
+    let savedData = getFromLocalStorage('selectedData');
     this.setState({
       favorites: favoriteCards || [],
       selectedData: savedData || []
@@ -54,7 +53,7 @@ class App extends Component {
     });
     if (!duplicate){
       currentFavorites.push(card)
-      this.sendToLocalStorage(currentFavorites)     
+      this.saveToLocalStorage(currentFavorites)     
     } else {
       let index = currentFavorites.indexOf(card)
       currentFavorites.splice(index, 1)
