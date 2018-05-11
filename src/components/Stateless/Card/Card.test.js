@@ -6,7 +6,7 @@ describe('Card', () => {
   let card;
   
   beforeEach(() => {
-    card = shallow(<Card />)
+    card = shallow(<Card />, { disableLifecycleMethods: true });
   })
 
   it('matches snapshot', () => {

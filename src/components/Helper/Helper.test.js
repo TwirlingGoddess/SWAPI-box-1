@@ -1,15 +1,14 @@
 import React from 'react';
-import Helper from './Helper';
+import { makeApiCall } from './Helper';
 import { shallow } from 'enzyme';
 jest.autoMockOn()
 
-  describe ('helper', () => {
-  let helper;
+  describe ('makeApiCall', () => {
+  let makeApiCall;
   let mockPeopleObject; 
  
 
   beforeEach(()=> {
-    helper = shallow(<Helper />, { disableLifecycleMethods: true } );
     
     mockPeopleObject = [{
       id: 'people1', 
@@ -27,7 +26,6 @@ jest.autoMockOn()
       Name:'C-3PO'
     }];
 
-    helper.instance().cleanData = jest.fn();
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       json: () => Promise.resolve({
         cleanData: mockPeopleObject
@@ -37,9 +35,13 @@ jest.autoMockOn()
 
   });
 
+  it('should match snapshot', async () => {
+    await expect(makeApiCall).toMatchSnapshot()
+  })
+
   it.only('calls fetch with the correct data', async () => {
     const expected = ['https://swapi.co/api/people'];
-    await helper.makeApiCall('people');
+    await makeApiCall('people');
     expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/people');
   });
 

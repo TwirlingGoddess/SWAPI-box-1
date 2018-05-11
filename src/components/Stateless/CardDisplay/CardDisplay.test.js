@@ -6,7 +6,7 @@ describe('CardDisplay', () => {
   let cardDisplay
 
   beforeEach(() => {
-    cardDisplay = shallow(<CardDisplay />)
+    cardDisplay = shallow(<CardDisplay />, { disableLifecycleMethods: true });
   })
 
   it('matches snapshot', () => {
