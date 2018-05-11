@@ -30,10 +30,10 @@ const Card = ({data, id, clicked, findCard}) => {
 }
 
 Card.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.object,
   key: PropTypes.number,
   clicked: PropTypes.bool,
-  findCard: PropTypes.func.isRequired,
+  findCard: PropTypes.func,
 };
 
 

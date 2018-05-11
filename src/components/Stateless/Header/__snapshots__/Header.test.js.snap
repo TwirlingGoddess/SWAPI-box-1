@@ -33,9 +33,9 @@ ShallowWrapper {
           />
 </div>,
         <Buttons
+          apiCall={undefined}
           displayFavorites={[Function]}
           favoritesLength={1}
-          makeApiCall={[Function]}
 />,
       ],
       "className": "Header",
@@ -81,9 +81,9 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
+          "apiCall": undefined,
           "displayFavorites": [Function],
           "favoritesLength": 1,
-          "makeApiCall": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -110,9 +110,9 @@ ShallowWrapper {
             />
 </div>,
           <Buttons
+            apiCall={undefined}
             displayFavorites={[Function]}
             favoritesLength={1}
-            makeApiCall={[Function]}
 />,
         ],
         "className": "Header",
@@ -158,9 +158,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
+            "apiCall": undefined,
             "displayFavorites": [Function],
             "favoritesLength": 1,
-            "makeApiCall": [Function],
           },
           "ref": null,
           "rendered": null,

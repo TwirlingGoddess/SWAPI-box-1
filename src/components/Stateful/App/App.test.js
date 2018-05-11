@@ -1,23 +1,31 @@
-import React from 'react';
-import App from './App';
-import { shallow } from 'enzyme';
+// import React from 'react';
+// import App from './App';
+// import { shallow } from 'enzyme';
+// global.window = {};
+// import localStorage from 'mock-local-storage';
+// window.localStorage = global.localStorage;
 
-global.localStorage = jest.fn()
-localStorage.instance.getItem = jest.fn()
+// window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+//   json: () => Promise.resolve({
+//   })
+// }))
 
-describe ('App', () => {
-  let app;
+// describe ('App', () => {
+//   let app;
 
-  beforeEach(() => {
-    app = shallow(<App /> );
-  });
+//   beforeEach(() => {
+//     app = shallow(<App /> );
+//   });
 
-  it('matches snapshots', () => {
-    expect(app).toMatchSnapshot()
-  })
+//   it('matches snapshots', () => {
+//     expect(app).toMatchSnapshot()
+//   })
 
-  // it('renders without crashing', () => {
+//   describe('apiCall', () => {
+//     it('sets changes the loading state on load', () => {
+//       app.instance().apiCall();
+//       expect(app.state().loading).toEqual(true)
+//     })
+//   })
 
-  // });
-
-})
+// })

@@ -19,7 +19,7 @@ class App extends Component {
     }
   }
 
-  makeApiCall = async (category) => {
+  apiCall = async (category) => {
     this.setState({loading:true})
     const selectedCategory = await this.state.helper.makeApiCall(category);
     await this.state.helper.sendToLocalStorage('selectedData', selectedCategory)
@@ -98,7 +98,7 @@ class App extends Component {
     if (this.state.selectedData.length && this.state.loading === false){
       return (
         <div>
-          <Header makeApiCall={this.makeApiCall} 
+          <Header apiCall={this.apiCall} 
             favoritesLength={favorites.length}
             displayFavorites={this.displayFavorites}
           />             
@@ -115,7 +115,7 @@ class App extends Component {
       return (
         <div className="App">
           <Header 
-            makeApiCall={this.makeApiCall} 
+            apiCall={this.apiCall} 
             favoritesLength={favorites.length}
             displayFavorites={this.displayFavorites}          
           />   

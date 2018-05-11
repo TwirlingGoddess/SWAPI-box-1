@@ -6,22 +6,22 @@ import PropTypes from 'prop-types';
 
 
 
-const Header = (props) => {
+const Header = ({apiCall,favoritesLength,displayFavorites}) => {
   return (
     <div className='Header'>
       <div className='logo'> <NavLink to='/'/></div>
-      <Buttons makeApiCall={props.makeApiCall}
-        favoritesLength={props.favoritesLength}
-        displayFavorites={props.displayFavorites}
+      <Buttons apiCall={apiCall}
+        favoritesLength={favoritesLength}
+        displayFavorites={displayFavorites}
       />
     </div>
   )
 }
 
-// Header.propTypes = {
-//   makeApiCall: PropTypes.func.isRequiered,
-//   favoritesLength: PropTypes.number.isRequired,
-//   displayFavorites: PropTypes.func.isRequired
-// }
+Header.propTypes = {
+  apiCall: PropTypes.func,
+  favoritesLength: PropTypes.number,
+  displayFavorites: PropTypes.func
+}
 
 export default Header
