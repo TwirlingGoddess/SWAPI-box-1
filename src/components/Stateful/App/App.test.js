@@ -1,16 +1,21 @@
 import React from 'react';
 import App from './App';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
+
 
 describe ('App', () => {
   let app;
 
   beforeEach(() => {
-    app = shallow(<App />, { disableLifecycleMethods: true });
+    app = shallow(<App /> );
   });
 
-  it('renders without crashing', () => {
+  it('matches snapshots', () => {
+    expect(app).toMatchSnapshot()
+  })
 
-  });
+  // it('renders without crashing', () => {
 
-}
+  // });
+
+})

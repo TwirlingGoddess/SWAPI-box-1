@@ -32,7 +32,7 @@ class App extends Component {
   sendToLocalStorage = (selectedData) => {
     this.state.helper.sendToLocalStorage('favorites', selectedData)
   }
-
+ 
   componentDidMount() {
     let favoriteCards = this.state.helper.getFromLocalStorage('favorites');
     let savedData = this.state.helper.getFromLocalStorage('selectedData');

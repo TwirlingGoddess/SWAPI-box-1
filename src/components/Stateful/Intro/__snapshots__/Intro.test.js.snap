@@ -1,3 +1,337 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`matches snapshot 1`] = `undefined`;
+exports[`matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Intro />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <section
+          className="intro"
+>
+          A long time ago, in a galaxy far, far away....
+</section>,
+        <div
+          className="crawl board"
+>
+          <div
+                    className="content"
+          >
+                    <h2
+                              className="filmText"
+                    />
+          </div>
+          <div
+                    className="introTitle"
+          >
+                    
+                    , 
+                    
+          </div>
+</div>,
+        <audio
+          autoPlay={true}
+          className="mainAudio"
+          loop={true}
+>
+          <source
+                    src="star-wars-theme-song.mp3"
+          />
+</audio>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "A long time ago, in a galaxy far, far away....",
+          "className": "intro",
+        },
+        "ref": null,
+        "rendered": "A long time ago, in a galaxy far, far away....",
+        "type": "section",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="content"
+>
+              <h2
+                            className="filmText"
+              />
+</div>,
+            <div
+              className="introTitle"
+>
+              
+              , 
+              
+</div>,
+          ],
+          "className": "crawl board",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <h2
+                className="filmText"
+/>,
+              "className": "content",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "",
+                "className": "filmText",
+              },
+              "ref": null,
+              "rendered": "",
+              "type": "h2",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "",
+                ", ",
+                "",
+              ],
+              "className": "introTitle",
+            },
+            "ref": null,
+            "rendered": Array [
+              "",
+              ", ",
+              "",
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "autoPlay": true,
+          "children": <source
+            src="star-wars-theme-song.mp3"
+/>,
+          "className": "mainAudio",
+          "loop": true,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "src": "star-wars-theme-song.mp3",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "source",
+        },
+        "type": "audio",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <section
+            className="intro"
+>
+            A long time ago, in a galaxy far, far away....
+</section>,
+          <div
+            className="crawl board"
+>
+            <div
+                        className="content"
+            >
+                        <h2
+                                    className="filmText"
+                        />
+            </div>
+            <div
+                        className="introTitle"
+            >
+                        
+                        , 
+                        
+            </div>
+</div>,
+          <audio
+            autoPlay={true}
+            className="mainAudio"
+            loop={true}
+>
+            <source
+                        src="star-wars-theme-song.mp3"
+            />
+</audio>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "A long time ago, in a galaxy far, far away....",
+            "className": "intro",
+          },
+          "ref": null,
+          "rendered": "A long time ago, in a galaxy far, far away....",
+          "type": "section",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="content"
+>
+                <h2
+                                className="filmText"
+                />
+</div>,
+              <div
+                className="introTitle"
+>
+                
+                , 
+                
+</div>,
+            ],
+            "className": "crawl board",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <h2
+                  className="filmText"
+/>,
+                "className": "content",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "",
+                  "className": "filmText",
+                },
+                "ref": null,
+                "rendered": "",
+                "type": "h2",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "",
+                  ", ",
+                  "",
+                ],
+                "className": "introTitle",
+              },
+              "ref": null,
+              "rendered": Array [
+                "",
+                ", ",
+                "",
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "autoPlay": true,
+            "children": <source
+              src="star-wars-theme-song.mp3"
+/>,
+            "className": "mainAudio",
+            "loop": true,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "src": "star-wars-theme-song.mp3",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "source",
+          },
+          "type": "audio",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
