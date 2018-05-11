@@ -9,8 +9,8 @@ window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
 }))
 
 
-describe ('Intro', () => {
-let intro;
+  describe ('Intro', () => {
+  let intro;
   beforeEach(() => {
     intro = shallow(<Intro />);
   });
