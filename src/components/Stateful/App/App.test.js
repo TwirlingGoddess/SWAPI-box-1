@@ -2,6 +2,8 @@ import React from 'react';
 import App from './App';
 import { shallow } from 'enzyme';
 
+global.localStorage = jest.fn()
+localStorage.instance.getItem = jest.fn()
 
 describe ('App', () => {
   let app;

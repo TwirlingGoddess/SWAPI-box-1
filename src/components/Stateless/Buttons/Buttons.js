@@ -17,11 +17,11 @@ const Buttons = ({makeApiCall,favoritesLength,displayFavorites}) => {
   )
 }
 
-Buttons.propTypes = {
-  makeApiCall: PropTypes.func.isRequiered,
-  favoritesLength: PropTypes.number.isRequired,
-  displayFavorites: PropTypes.func.isRequired
-};
+// Buttons.propTypes = {
+//   makeApiCall: PropTypes.func.isRequiered,
+//   favoritesLength: PropTypes.number.isRequired,
+//   displayFavorites: PropTypes.func.isRequired
+// };
 
 
 export default Buttons;

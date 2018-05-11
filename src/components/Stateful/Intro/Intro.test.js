@@ -3,7 +3,13 @@ import { shallow, mount } from 'enzyme';
 import Intro from './Intro';
 
 
-describe ('', () => {
+window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+  json: () => Promise.resolve({
+  })
+}))
+
+
+describe ('Intro', () => {
 let intro;
   beforeEach(() => {
     intro = shallow(<Intro />);

@@ -18,10 +18,10 @@ const Header = (props) => {
   )
 }
 
-Header.propTypes = {
-  makeApiCall: PropTypes.func.isRequiered,
-  favoritesLength: PropTypes.number.isRequired,
-  displayFavorites: PropTypes.func.isRequired
-}
+// Header.propTypes = {
+//   makeApiCall: PropTypes.func.isRequiered,
+//   favoritesLength: PropTypes.number.isRequired,
+//   displayFavorites: PropTypes.func.isRequired
+// }
 
 export default Header
