@@ -101,5 +101,16 @@ const mockOpeningApiResponse = {
   ]
 }
 
-export default { mockPlanetApiResponse, mockVehicleApiResponse, mockPeopleApiResponse};
+const mockPeopleObject = [{"Homeworld": undefined, 
+"Name": "Luke Skywalker", 
+"Population": undefined, 
+"Specie": undefined, "id": 
+"people0", 
+"keyList": "people"
+}]
+
+
+
+
+export { mockPlanetApiResponse, mockVehicleApiResponse, mockPeopleApiResponse, mockPeopleObject};
 

@@ -16,6 +16,7 @@ cleanDataFunc = (dataObject) => {
 }
 
 peopleObject = async (parsedData) => {
+
   const unresolvedPromises = parsedData.map( async(person,index) => {
     const keyList = 'people';
     const homeworld = await this.nestedFetch(person.homeworld);
@@ -67,17 +68,17 @@ makeApiCall = (category) => {
 }
 
 apiCallHelper = async (url) => {
-  try {
-    const fetchURL = await fetch(url);
-    const parseObject = await fetchURL.json();
+  // try {
+    const response = await fetch(url);
+    const parseObject = await response.json();
     const cleanData = await this.cleanDataFunc(parseObject);
     this.sendToLocalStorage(url, cleanData);
     return cleanData;
-  }
-  catch (er) {
-    const error = new Error('error')
-    return error
-  }
+  // }
+  // catch (error) {
+  //  console.error(error)
+  //  return error
+  // }
  };
 
 sendToLocalStorage = (key, selectedData) => {
