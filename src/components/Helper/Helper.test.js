@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeApiCall, cleanDataFunc } from './Helper';
+import { makeApiCall, cleanDataFunc, apiCall } from './Helper';
 import { shallow } from 'enzyme';
 import { fetchedPeopleData } from '../../_mocks_/mockData';
 
@@ -9,6 +9,7 @@ jest.autoMockOn()
 
   beforeEach(()=> { 
     jest.resetAllMocks();
+
     window.fetch = jest.fn().mockImplementation(() => {
       Promise.resolve({ json: () => Promise.resolve({
         data: 'mock'
@@ -29,13 +30,16 @@ jest.autoMockOn()
         'Content-Type': 'application/json'
       }
     }
+    const makeApiCall = jest.fn
     const url = 'https://swapi.co/api/people'
     const fetchURL = window.fetch(url) 
     expect(window.fetch).toHaveBeenCalled();
   });
 
-  it('calls cleandata', () => {
-    
+  it('calls apiCall', async () => {
+    () => makeApiCall();
+    const apiCall = jest.fn()
+    expect(apiCall).toHaveBeenCalled()
   });
 
   it('calls saveToLocalStorage', () => {

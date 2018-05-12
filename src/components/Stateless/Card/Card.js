@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 
 const Card = ({data, id, clicked, findCard}) => {
+  console.log(data)
   const card = data
   return (
     <div className={clicked ? 'favoriteCard' : 'card'  } onClick={() => findCard(data)}>

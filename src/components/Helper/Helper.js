@@ -16,13 +16,9 @@ export const peopleObject = async (parsedData) => {
   const unresolvedPromises = parsedData.map( async(person,index) => {
     const keyList = 'people';
     const homeworld = await nestedFetch(person.homeworld);
-    const homeworldName = homeworld.name;
-    const homeworldPopulation = homeworld.population;
     const specieObj = await nestedFetch(person.species);
-    const specie = specieObj.name;
-    const name = person.name;
     const id = keyList + index;
-    return {id, keyList, Homeworld: homeworldName, Population: homeworldPopulation, Specie: specie, Name:name};
+    return {id, keyList, Homeworld: homeworld.name, Population: homeworld.population, Specie: specieObj.name, Name: person.name};
   });
   return Promise.all(unresolvedPromises);
 }
@@ -31,13 +27,9 @@ export const peopleObject = async (parsedData) => {
 export const planetObject = async (parsedData) => {
   const unresolvedPromises = parsedData.map(async(planet,index) => {
     const keyList = 'planets';  
-    const planetName = planet.name;
-    const planetTerrain = planet.terrain;
-    const planetPopulation = planet.population;
-    const planetClimate = planet.climate;
     const residents = await residentsFetch(planet.residents);
     const id = keyList + index;
-    return {id, keyList, Name: planetName, Terrain: planetTerrain, Population: planetPopulation, Climate: planetClimate, Residents: residents};
+    return {id, keyList, Name: planet.name, Terrain: planet.terrain, Population: planet.population, Climate: planet.climate, Residents: residents};
   });
   return Promise.all(unresolvedPromises);
 }
@@ -45,19 +37,15 @@ export const planetObject = async (parsedData) => {
 export const vehicleObject = (parsedData) => {
   const vehicleArray = parsedData.map((vehicle, index) => {
     const keyList = 'vehicles'; 
-    const vehicleName = vehicle.name;
-    const vehicleModel = vehicle.model;
-    const vehicleClass = vehicle.vehicle_class;
-    const numberOfPassengers = vehicle.passengers;
     const id = keyList + index;
-    return {id, keyList, Name: vehicleName, Model: vehicleModel, Class: vehicleClass, Passengers:numberOfPassengers};
+    return {id, keyList, Name: vehicle.name, Model: vehicle.model, Class: vehicle.vehicle_class, Passengers: vehicle.passengers};
   });
   return vehicleArray;
 }
 
 export const nestedFetch = async (url) => {
-  const fetchURL= await fetch(url);
-  const parseObject= await fetchURL.json();
+  const fetchURL = await fetch(url);
+  const parseObject = await fetchURL.json();
   return parseObject;
 }
 
@@ -70,7 +58,7 @@ export const residentsFetch = async (residentsUrls) => {
   return Promise.all(unresolvedPromises);
 }
 
-export const makeApiCall = async (category) => {
+export const makeApiCall = (category) => {
   const url = `https://swapi.co/api/${category}`;
   return apiCall(url)
 }
