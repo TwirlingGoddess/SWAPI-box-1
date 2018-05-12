@@ -1,16 +1,16 @@
-import React from 'react';
-import { shallow, mount } from 'enzyme';
-import Buttons from './Buttons';
+// import React from 'react';
+// import { shallow, mount } from 'enzyme';
+// import Buttons from './Buttons';
 
 
-describe('Buttons', () => {
-  let buttons
+// describe('Buttons', () => {
+//   let buttons
 
-  beforeEach(() => {
-    buttons = shallow(<Buttons />);
-  })
+//   beforeEach(() => {
+//     buttons = shallow(<Buttons />);
+//   })
 
-  it('matches snapshot', () => {
-    expect(buttons).toMatchSnapshot()
-  })
-})
+//   it('matches snapshot', () => {
+//     expect(buttons).toMatchSnapshot()
+//   })
+// })

@@ -1,15 +1,15 @@
-import React from 'react';
-import { shallow, mount } from 'enzyme';
-import Card from './Card';
+// import React from 'react';
+// import { shallow, mount } from 'enzyme';
+// import Card from './Card';
 
-describe('Card', () => {
-  let card;
+// describe('Card', () => {
+//   let card;
   
-  beforeEach(() => {
-    card = shallow(<Card />, { disableLifecycleMethods: true });
-  })
+//   beforeEach(() => {
+//     card = shallow(<Card />, { disableLifecycleMethods: true });
+//   })
 
-  it('matches snapshot', () => {
-    expect(card).toMatchSnapshot();
-  })
-})
+//   it('matches snapshot', () => {
+//     expect(card).toMatchSnapshot();
+//   })
+// })

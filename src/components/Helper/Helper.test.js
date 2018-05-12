@@ -1,105 +1,108 @@
 import React from 'react';
-import { makeApiCall, cleanDataFunc, apiCall } from './Helper';
+import { makeApiCall, apicall } from './Helper';
 import { shallow } from 'enzyme';
-import { fetchedPeopleData } from '../../_mocks_/mockData';
+import { mockPlanetApiResponse, mockVehicleApiResponse, mockPeopleApiResponse } from '../../_mocks_/mockData';
+/* eslint-env mocha */
 
-jest.autoMockOn()
-
-  describe ('makeApiCall', () => {
+describe('makeApiCall', () => {
 
   beforeEach(()=> { 
-    jest.resetAllMocks();
-
-    window.fetch = jest.fn().mockImplementation(() => {
-      Promise.resolve({ json: () => Promise.resolve({
-        data: 'mock'
+    window.fetch = jest.fn().mockImplementation(() => 
+      Promise.resolve({ 
+        status: 200,
+        ok: true,
+        json: () => Promise.resolve({ mockPeopleApiResponse })
       })
-      })
-    })
+    )
   });
 
   it('should match snapshot', async () => {
-    await expect(makeApiCall).toMatchSnapshot()
+    await expect(helper.makeApiCall).toMatchSnapshot()
   })
 
-  it('calls fetch with the correct data', async () => {
-    const expectedFetchBody = {
-      method: 'GET',
-      body: JSON.stringify({ result: fetchedPeopleData }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }
-    const makeApiCall = jest.fn
-    const url = 'https://swapi.co/api/people'
-    const fetchURL = window.fetch(url) 
-    expect(window.fetch).toHaveBeenCalled();
+  it.only('calls apicall function', async () => {
+    const category = 'planets'
+    makeApiCall('people')
+    expect(apicall).toHaveBeenCalled();
   });
 
-  it('calls apiCall', async () => {
-    apiCall.mockImplementation(() => Promise.resolve(fetchedPeopleData));
-    await makeApiCall();
-    await expect(apiCall).toHaveBeenCalledTimes(1);
-  });
+  // it('calls apiCall', async () => {
+  //   // apiCall.mockImplementation(() => Promise.resolve(fetchedPeopleData));
+  //   await makeApiCall();
+  //   await expect(apiCall).toHaveBeenCalledTimes(1);
+  // });
 
-  it('calls saveToLocalStorage', () => {
+  // describe('apiCall', () => {
+  //   beforeEach(() => {
+  //     const fetchURL = window.fetch()
+  //   })
+  //   it('calls fetch', async () => {
+  //     const url = 'https://swapi.co/api/people';
+  //     await makeApiCall(url)
+  //     await expect(window.fetch).toHaveBeenCalledTimes(1)
 
-  });
+  //   })
 
-  it('saves to local storage', () => {
+  //   it('calls saveToLocalStorage', () => {
+      
+  //   });
     
-  });
-
-  it('returns clean data', () => {
+  //   it('saves to local storage', () => {
+      
+  //   });
     
-  });
-
-  describe('cleanData', () => {
-
-    it('returns an object with the correct information', () => {
+  //   it('returns clean data', () => {
+      
+  //   });
     
-    });
-  });
+  // })
 
-  describe('peopleObject', () => {
+  // describe('cleanData', () => {
 
-    it('returns a people object', () => {
+  //   it('returns an object with the correct information', () => {
     
-    });
-  });
+  //   });
+  // });
 
-  describe('planetObject', () => {
+  // describe('peopleObject', () => {
 
-    it('returns a planet object', () => {
+  //   it('returns a people object', () => {
     
-    });
-  });
+  //   });
+  // });
 
-  describe('nestedFetch', () => {
+  // describe('planetObject', () => {
 
-    it('returns an object with the correct information', () => {
+  //   it('returns a planet object', () => {
     
-    });
-  });
+  //   });
+  // });
 
-  describe('residentsFetch', () => {
+  // describe('nestedFetch', () => {
 
-    it('returns an object with the correct information', () => {
+  //   it('returns an object with the correct information', () => {
     
-    });
-  });
+  //   });
+  // });
 
-  describe('sendToLocalStorage', () => {
+  // describe('residentsFetch', () => {
 
-    it('saves to local storage', () => {
+  //   it('returns an object with the correct information', () => {
     
-    });
-  });
+  //   });
+  // });
 
-  describe('getFromLocalStorage', () => {
+  // describe('sendToLocalStorage', () => {
 
-    it('retrieves info from local storage ', () => {
+  //   it('saves to local storage', () => {
     
-    });
-  });
+  //   });
+  // });
+
+  // describe('getFromLocalStorage', () => {
+
+  //   it('retrieves info from local storage ', () => {
+    
+  //   });
+  // });
 });
