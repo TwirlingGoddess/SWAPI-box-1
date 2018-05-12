@@ -37,9 +37,9 @@ jest.autoMockOn()
   });
 
   it('calls apiCall', async () => {
-    () => makeApiCall();
-    const apiCall = jest.fn()
-    expect(apiCall).toHaveBeenCalled()
+    apiCall.mockImplementation(() => Promise.resolve(fetchedPeopleData));
+    await makeApiCall();
+    await expect(apiCall).toHaveBeenCalledTimes(1);
   });
 
   it('calls saveToLocalStorage', () => {

@@ -64,11 +64,15 @@ export const makeApiCall = (category) => {
 }
 
  export const apiCall = async (url) => {
-  const fetchURL = await fetch(url);
-  const parseObject = await fetchURL.json();
-  const cleanData = await cleanDataFunc(parseObject);
-  sendToLocalStorage(url, cleanData);
-  return cleanData;
+  try {
+    const fetchURL = await fetch(url);
+    const parseObject = await fetchURL.json();
+    const cleanData = await cleanDataFunc(parseObject);
+    sendToLocalStorage(url, cleanData);
+    return cleanData;
+  } catch (error) {
+    throw new Error(`error: ${error.message}`)
+  }
  }
 
 export const sendToLocalStorage = (key, selectedData) => {
