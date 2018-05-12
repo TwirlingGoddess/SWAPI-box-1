@@ -63,10 +63,10 @@ residentsFetch = async (residentsUrls) => {
 
 makeApiCall = (category) => {
   const url = `https://swapi.co/api/${category}`;
-  return this.apiCall(url)
+  return this.apiCallHelper(url)
 }
 
-apiCall = async (url) => {
+apiCallHelper = async (url) => {
   try {
     const fetchURL = await fetch(url);
     const parseObject = await fetchURL.json();
