@@ -1,52 +1,41 @@
 import React from 'react';
-import { makeApiCall } from './Helper';
+import { makeApiCall, cleanDataFunc } from './Helper';
 import { shallow } from 'enzyme';
+import { fetchedPeopleData } from '../../_mocks_/mockData';
+
 jest.autoMockOn()
 
   describe ('makeApiCall', () => {
-  let makeApiCall;
-  let mockPeopleObject; 
- 
 
-  beforeEach(()=> {
-    
-    mockPeopleObject = [{
-      id: 'people1', 
-      keyList: 'people',
-      Homeworld: 'Tatooine', 
-      Population: 200000, 
-      Specie: 'Human', 
-      Name:'Luke Skywalker'
-    }, 
-    { id: 'people2', 
-      keyList: 'people',
-      Homeworld: 'Tatooine', 
-      Population: 200000, 
-      Specie: 'Droid', 
-      Name:'C-3PO'
-    }];
-
-    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-      json: () => Promise.resolve({
-        cleanData: mockPeopleObject
+  beforeEach(()=> { 
+    jest.resetAllMocks();
+    window.fetch = jest.fn().mockImplementation(() => {
+      Promise.resolve({ json: () => Promise.resolve({
+        data: 'mock'
       })
-    }));
-    
-
+      })
+    })
   });
 
   it('should match snapshot', async () => {
     await expect(makeApiCall).toMatchSnapshot()
   })
 
-  it.only('calls fetch with the correct data', async () => {
-    const expected = ['https://swapi.co/api/people'];
-    await makeApiCall('people');
-    expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/people');
+  it('calls fetch with the correct data', async () => {
+    const expectedFetchBody = {
+      method: 'GET',
+      body: JSON.stringify({ result: fetchedPeopleData }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    const url = 'https://swapi.co/api/people'
+    const fetchURL = window.fetch(url) 
+    expect(window.fetch).toHaveBeenCalled();
   });
 
   it('calls cleandata', () => {
-
+    
   });
 
   it('calls saveToLocalStorage', () => {

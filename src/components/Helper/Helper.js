@@ -72,12 +72,16 @@ export const residentsFetch = async (residentsUrls) => {
 
 export const makeApiCall = async (category) => {
   const url = `https://swapi.co/api/${category}`;
+  return apiCall(url)
+}
+
+ export const apiCall = async (url) => {
   const fetchURL = await fetch(url);
   const parseObject = await fetchURL.json();
   const cleanData = await cleanDataFunc(parseObject);
   sendToLocalStorage(url, cleanData);
   return cleanData;
-}
+ }
 
 export const sendToLocalStorage = (key, selectedData) => {
   localStorage.setItem(key, JSON.stringify(selectedData));
