@@ -87,5 +87,21 @@ describe('Helper', () => {
       await expect(helper.cleanDataFunc).toHaveBeenCalledWith(mockPeopleApiResponse);  
     })     
   })
+
+  describe('cleanDataFunction', () => {
+
+    it('should check the selected url and call the corresponding function', async () => {
+      helper.vehicleObject = jest.fn();
+      helper.cleanDataFunc(mockVehicleApiResponse)
+      await expect(helper.vehicleObject).toHaveBeenCalled()
+    })
+
+    it('should not call the function that doesnt include the selected category', async () => {
+
+      helper.peopleObject = jest.fn();
+      helper.cleanDataFunc(mockVehicleApiResponse)
+      await expect(helper.peopleObject).toHaveBeenCalledTimes(0)
+    })
+  })
 })
 
