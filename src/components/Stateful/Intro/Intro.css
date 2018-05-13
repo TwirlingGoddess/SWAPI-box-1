@@ -10,32 +10,32 @@
   width: 40%; }
 
 .introTitle {
-  margin-top: 160%;
-  width: 107%;
-  height: 17vh;
-  position: relative;
   background-color: black;
-  font-size: 5vh;
   color: yellow;
+  font-family: "Nanum Gothic Coding", monospace;
+  font-size: 5vh;
+  height: 17vh;
+  margin-top: 160%;
+  position: relative;
   text-align: center;
   text-shadow: 1px 1px darkred;
-  font-family: "Nanum Gothic Coding", monospace; }
+  width: 107%; }
 
 .intro {
-  position: absolute;
-  top: 39%;
-  left: 25%;
-  z-index: 1;
   -webkit-animation: intro 6s ease-out 1s;
   animation: intro 6s ease-out 1s;
   color: yellow;
-  font-weight: 400;
+  font-family: "Nanum Gothic Coding", monospace;
   font-size: 11vh;
-  width: 50%;
-  text-shadow: 2px 2px black;
+  font-weight: 400;
+  left: 25%;
   margin: auto;
   opacity: 0;
-  font-family: "Nanum Gothic Coding", monospace; }
+  position: absolute;
+  text-shadow: 2px 2px black;
+  top: 39%;
+  width: 50%;
+  z-index: 1; }
 
 @keyframes intro {
   0% {
@@ -51,34 +51,34 @@ p {
   color: #FFFF82; }
 
 .board {
-  font-family: "Nanum Gothic Coding", monospace;
-  -webkit-transform: perspective(300px) rotateX(25deg);
-  transform: perspective(364px) rotateX(20deg);
-  -webkit-transform-origin: 50% 100%;
   -ms-transform-origin: 50% 100%;
-  transform-origin: 50% 100%;
-  text-align: justify;
-  position: absolute;
-  margin-left: -14em;
-  font-weight: bold;
-  overflow: hidden;
-  font-size: 370%;
-  height: 26em;
-  width: 16em;
+  -webkit-box-shadow: 0 0 10px #9ecaed;
+  -webkit-transform-origin: 50% 100%;
+  -webkit-transform: perspective(300px) rotateX(25deg);
+  border-color: #fb0000;
   bottom: 0;
+  box-shadow: 0 0 33px #f10303;
+  color: red;
+  font-family: "Nanum Gothic Coding", monospace;
+  font-size: 370%;
+  font-weight: bold;
+  height: 26em;
   left: 50%;
   line-height: 20vh;
-  color: red;
+  margin-left: -14em;
   outline: none;
-  border-color: #fb0000;
-  -webkit-box-shadow: 0 0 10px #9ecaed;
-  box-shadow: 0 0 33px #f10303; }
+  overflow: hidden;
+  position: absolute;
+  text-align: justify;
+  transform-origin: 50% 100%;
+  transform: perspective(364px) rotateX(20deg);
+  width: 16em; }
 
 .board:after {
-  position: absolute;
-  content: ' ';
   bottom: 60%;
+  content: ' ';
   left: 0;
+  position: absolute;
   right: 0;
   top: 0; }
 
@@ -88,8 +88,8 @@ p {
   top: 100%; }
 
 .title, .subtitle {
-  text-align: center;
-  font-family: "Nanum Gothic Coding", monospace; }
+  font-family: "Nanum Gothic Coding", monospace;
+  text-align: center; }
 
 @keyframes scroll {
   0% {
