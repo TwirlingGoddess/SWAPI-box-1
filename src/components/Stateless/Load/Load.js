@@ -9,8 +9,7 @@ const Load = () => {
   return (
     <div className='background'>
       <div className='videoBox'>
-        <div className='loader' />
-        <h2>Loading</h2> 
+        <h2>Loading...</h2> 
       </div>
     </div>
   )

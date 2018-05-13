@@ -3,7 +3,7 @@
   margin: auto;
   width: 80%;
   background-color: black;
-  background-image: url('https://media.giphy.com/media/30ifKaUVWL7EI/giphy.gif');
+  background-image: url('https://1.bp.blogspot.com/-0u1S3IjYnD8/U7AOO_iTa-I/AAAAAAABXOA/yqZAB9DqTRM/s1600/TFUdpmr.gif');
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0.9;
@@ -20,35 +20,12 @@
   box-sizing: border-box
 }
 
-.loader {
-  margin: 20% 35%;
-  border-radius: 50%;
-  z-index: 30;
-  position: absolute;
-  border-top: 16px solid black;
-  border-bottom: 16px solid red;
-  width: 80px;
-  height: 80px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-}
-
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
 .videoBox h2 {
   position: absolute;
   font-size: 10vh;
-  color: rgb(212, 31, 31);
-  text-shadow: 1px 1px rgb(2, 1, 1);
-  margin-top: 10vh;
+  color: yellow;
+  text-shadow: 2px 2px rgb(2, 1, 1);
+  margin-top: 15vh;
   margin-left: 30%;
   font-family: 'Nanum Gothic Coding', monospace;
   

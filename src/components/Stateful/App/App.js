@@ -54,11 +54,11 @@ class App extends Component {
     });
     if (!duplicate){
       currentFavorites.push(card)
-      this.saveToLocalStorage(currentFavorites)     
     } else {
       let index = currentFavorites.indexOf(card)
       currentFavorites.splice(index, 1)
     }
+    this.saveToLocalStorage(currentFavorites)     
     this.setState({
       favorites: currentFavorites
     })  
