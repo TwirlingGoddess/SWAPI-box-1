@@ -1,17 +1,20 @@
+$black-color :  black;
+$main-font : 'Nanum Gothic Coding', monospace;
+
 button {
-  background-image: url('../../../assets/star-wars-2369317_640.png');
-  width: 25vh;
-  height: 12vh;
   background-color: transparent;
-  border: none;
-  background-size: 21vh;
-  color: white;
-  padding: 3vh;
-  font-size: 4vh;
+  background-image: url('../../../assets/star-wars-2369317_640.png');
   background-repeat: space;
-  margin: 1vh;
+  background-size: 21vh;
+  border: none;
+  color: white;
   cursor: pointer;
   font-family: 'Nanum Gothic Coding', monospace;  
+  font-size: 4vh;
+  height: 12vh;
+  margin: 1vh;
+  padding: 3vh;
+  width: 25vh;
 }
 
 a {

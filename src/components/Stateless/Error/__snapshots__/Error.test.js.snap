@@ -21,7 +21,7 @@ ShallowWrapper {
         className="videoBox"
 >
         <h2>
-                Erroring...
+                Add Favorite Cards!
         </h2>
 </div>,
       "className": "background",
@@ -33,7 +33,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <h2>
-          Erroring...
+          Add Favorite Cards!
 </h2>,
         "className": "videoBox",
       },
@@ -43,10 +43,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Erroring...",
+          "children": "Add Favorite Cards!",
         },
         "ref": null,
-        "rendered": "Erroring...",
+        "rendered": "Add Favorite Cards!",
         "type": "h2",
       },
       "type": "div",
@@ -63,7 +63,7 @@ ShallowWrapper {
           className="videoBox"
 >
           <h2>
-                    Erroring...
+                    Add Favorite Cards!
           </h2>
 </div>,
         "className": "background",
@@ -75,7 +75,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <h2>
-            Erroring...
+            Add Favorite Cards!
 </h2>,
           "className": "videoBox",
         },
@@ -85,10 +85,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Erroring...",
+            "children": "Add Favorite Cards!",
           },
           "ref": null,
-          "rendered": "Erroring...",
+          "rendered": "Add Favorite Cards!",
           "type": "h2",
         },
         "type": "div",
