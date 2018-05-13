@@ -1,31 +1,83 @@
-// import React from 'react';
-// import App from './App';
-// import { shallow } from 'enzyme';
-// global.window = {};
-// import localStorage from 'mock-local-storage';
-// window.localStorage = global.localStorage;
+import React from 'react';
+import App from './App';
+import Helper from '../../Helper/Helper'
+import { shallow } from 'enzyme';
+import { mockPeopleApiResponse, mockPeopleObject } from '../../../_mocks_/mockData';
+import 'jest-localstorage-mock'
 
-// window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//   json: () => Promise.resolve({
-//   })
-// }))
+describe('app', () => {
+  let app
+  let helper
+  it('matches snapshot', () => {
+    expect(app).toMatchSnapshot()
+  })
 
-// describe ('App', () => {
-//   let app;
+  describe('apiCall', () => {
 
-//   beforeEach(() => {
-//     app = shallow(<App /> );
-//   });
+    beforeEach(() => {
+      app = shallow(<App />, { disableLifecycleMethods: true })
+      helper = new Helper()
+      window.fetch = jest.fn()
+      helper.sendToLocalStorage = jest.fn()
+    })
 
-//   it('matches snapshots', () => {
-//     expect(app).toMatchSnapshot()
-//   })
+    it('should update the state', async () => {
 
-//   describe('apiCall', () => {
-//     it('sets changes the loading state on load', () => {
-//       app.instance().apiCall();
-//       expect(app.state().loading).toEqual(true)
-//     })
-//   })
+      // window.fetch.mockImplementation(() => {
+      //   return Promise.resolve({ 
+      //     status: 200,
+      //     ok: true,
+      //     json: () => Promise.resolve( mockPeopleApiResponse )
+      //   })
+      // })
+      // helper.sendToLocalStorage = jest.fn()
+      // helper.makeApiCall = jest.fn()
 
-// })
+      // await app.instance().apiCall()
+    })
+  })
+
+  describe('componenDidMount', () => {
+    it('should set the state if there is something is local storage', () => {
+      app.instance().componentDidMount()
+      expect(app.state().favorites).toHaveLength(0)
+    })
+  })
+
+  describe('FindCard', () => {
+    let selectedCard    
+
+    beforeEach(() => {
+      
+    })
+    it('finds the selected card and pushes it to the favorites array', () => {
+      selectedCard = {id: "people0", keyList: "people", Homeworld: "Tatooine", Population: "200000", Specie: "Human"} 
+      app.instance().findCard(selectedCard)
+      expect(app.state().favorites).toHaveLength(1)
+    })
+
+    it('calls addToFavorites ', () => {
+      app.instance().addCardToFavorites = jest.fn()
+      app.instance().findCard(selectedCard)
+      expect(app.instance().addCardToFavorites).toHaveBeenCalled()
+    })
+  })
+
+  describe('addCardFavorites', () => {
+    let selectedCard    
+
+    beforeEach(() => {
+      
+    })
+    it('checks for duplicates', () => {
+      const expectedResult = mockPeopleObject
+      app.setState({
+        favorites: mockPeopleObject
+      })
+      selectedCard = {id: "people0", keyList: "people", Homeworld: "Tatooine", Population: "200000", Specie: "Human"} 
+      app.instance().addCardToFavorites(selectedCard)
+      expect(app.state().favorites).toEqual(expectedResult);
+    })
+  })
+
+})
