@@ -6,6 +6,8 @@ import { NavLink, Route } from 'react-router-dom'
 import Header from '../../Stateless/Header/Header'
 import Helper from '../../Helper/Helper'
 import Load from '../../Stateless/Load/Load'
+import Errors from '../../Stateless/Error/Errors'
+
 import './App.css';
 
 class App extends Component {
@@ -90,7 +92,11 @@ class App extends Component {
     if (this.state.selectedData === null) {
       return (
         <div>
-          <h3>Addddddd</h3>
+          <Header apiCall={this.apiCall} 
+            favoritesLength={favorites.length}
+            displayFavorites={this.displayFavorites}
+          />  
+          <Errors />
         </div>
       )
     }
