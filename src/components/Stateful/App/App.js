@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import '../../../reset.css'
-import Intro from '../Intro/Intro'
-import CardDisplay from '../../Stateless/CardDisplay/CardDisplay'
-import { NavLink, Route } from 'react-router-dom'
-import Header from '../../Stateless/Header/Header'
-import Helper from '../../Helper/Helper'
-import Load from '../../Stateless/Load/Load'
-import Errors from '../../Stateless/Error/Error'
+import '../../../reset.css';
+import Intro from '../Intro/Intro';
+import CardDisplay from '../../Stateless/CardDisplay/CardDisplay';
+import { NavLink, Route } from 'react-router-dom';
+import Header from '../../Stateless/Header/Header';
+import Helper from '../../Helper/Helper';
+import Load from '../../Stateless/Load/Load';
+import Errors from '../../Stateless/Error/Error';
 
 import './App.css';
 
@@ -18,21 +18,21 @@ class App extends Component {
       selectedData: [],
       loading: false,
       helper: new Helper()
-    }
+    };
   }
 
   apiCall = async (category) => {
-    this.setState({loading:true})
+    this.setState({loading:true});
     const selectedCategory = await this.state.helper.makeApiCall(category);
-    await this.state.helper.sendToLocalStorage('selectedData', selectedCategory)
+    await this.state.helper.sendToLocalStorage('selectedData', selectedCategory);
     return this.setState({
       selectedData: selectedCategory,
       loading: false
-    })
+    });
   }
 
   saveToLocalStorage = (selectedData) => {
-    this.state.helper.sendToLocalStorage('favorites', selectedData)
+    this.state.helper.sendToLocalStorage('favorites', selectedData);
   }
  
   componentDidMount() {
@@ -41,12 +41,12 @@ class App extends Component {
     this.setState({
       favorites: favoriteCards || [],
       selectedData: savedData || []
-    })
+    });
   }
 
   findCard = (card) => {
-    const selectedCard = this.state.selectedData.find(data => card.id === data.id)
-    this.addCardToFavorites(selectedCard)
+    const selectedCard = this.state.selectedData.find(data => card.id === data.id);
+    this.addCardToFavorites(selectedCard);
   }
 
   addCardToFavorites = (card) => {
@@ -55,15 +55,15 @@ class App extends Component {
       return favCard.id === card.id;
     });
     if (!duplicate){
-      currentFavorites.push(card)
+      currentFavorites.push(card);
     } else {
-      let index = currentFavorites.indexOf(card)
-      currentFavorites.splice(index, 1)
+      let index = currentFavorites.indexOf(card);
+      currentFavorites.splice(index, 1);
     }
-    this.saveToLocalStorage(currentFavorites)     
+    this.saveToLocalStorage(currentFavorites);     
     this.setState({
       favorites: currentFavorites
-    })  
+    });  
   }	   
 
   displayFavorites = () => {
@@ -71,22 +71,22 @@ class App extends Component {
     if (!favoriteCards.length){
       this.setState({
         selectedData: null
-      })
+      });
     } else {
       this.setState({
         selectedData: favoriteCards
-      })
+      });
     }
   }
 
   render() {
     const {selectedData, favorites} = this.state;
 
-    <Route exact path='/' component={Intro} />
+    <Route exact path='/' component={Intro} />;
     if (this.state.loading === true) {
       return (
         <Load />
-      )
+      );
     }
 
     if (this.state.selectedData === null) {
@@ -98,7 +98,7 @@ class App extends Component {
           />  
           <Errors />
         </div>
-      )
+      );
     }
 
     if (this.state.selectedData.length && this.state.loading === false){
@@ -114,10 +114,8 @@ class App extends Component {
             favorites={this.state.favorites}
           />
         </div>
-      )
-    }
-    
-    else if (!selectedData.length){
+      );
+    } else if (!selectedData.length){
       return (
         <div className="App">
           <Header 

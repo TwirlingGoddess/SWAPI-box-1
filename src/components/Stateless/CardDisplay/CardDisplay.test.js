@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import CardDisplay from './CardDisplay';
 import Card from '../Card/Card'
+/* eslint-env mocha */
 
 const mockProps = {
   selectedData: [],

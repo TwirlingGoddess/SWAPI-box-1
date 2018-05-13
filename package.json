@@ -19,6 +19,7 @@
     "video-react": "^0.10.5"
   },
   "scripts": {
+    "lint": "./node_modules/eslint/bin/eslint.js ./src/ --ignore-pattern *.test.js",
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
@@ -27,7 +28,7 @@
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "eslint": "./node_modules/eslint/bin/eslint.js ./src/*.js"
+    "eslint": "./node_modules/eslint/bin/eslint.js ./Components/**/*.js --ignore-pattern *.test.js"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",

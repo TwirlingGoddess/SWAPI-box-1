@@ -1,7 +1,7 @@
-import React from 'react'
-import '../Error/Error.css'
+import React from 'react';
+import '../Error/Error.css';
 import { Player } from 'video-react';
-import video from '../../../assets/source.gif'
+import video from '../../../assets/source.gif';
 
 const Errors = () => {
 
@@ -12,7 +12,7 @@ const Errors = () => {
         <h2>Add Favorite Cards!</h2>         
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Errors
+export default Errors;

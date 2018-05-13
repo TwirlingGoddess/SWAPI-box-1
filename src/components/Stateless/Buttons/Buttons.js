@@ -1,11 +1,9 @@
 import './Buttons.css';
 import React, { Component } from 'react';
-import { NavLink, Route } from 'react-router-dom'
+import { NavLink, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-
-
-const Buttons = ({apiCall,favoritesLength,displayFavorites}) => {
+const Buttons = ({apiCall, favoritesLength, displayFavorites}) => {
 
   return (
     <div>
@@ -14,8 +12,8 @@ const Buttons = ({apiCall,favoritesLength,displayFavorites}) => {
       <button><NavLink to='/vehicles' className='vehicles nav' onClick={() => apiCall('vehicles')}>Vehicles</NavLink></button>
       <button><NavLink to='/favorites' className='favorite nav' onClick={() => displayFavorites()}>Favorite:{favoritesLength}</NavLink></button>
     </div>
-  )
-}
+  );
+};
 
 Buttons.propTypes = {
   apiCall: PropTypes.func,

@@ -10,6 +10,6 @@ const router = (
   <Router>
     <App />
   </Router>
-)
+);
 ReactDOM.render(router, document.getElementById('root'));
 registerServiceWorker();

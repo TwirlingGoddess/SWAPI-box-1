@@ -1,8 +1,7 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Intro from './Intro';
-import { mockPeopleApiResponse, mockPeopleObject, filmCrawl, filmCrawlResponse } from '../../../_mocks_/mockData';
-
+import { mockPeopleApiResponse, filmCrawlResponse } from '../../../_mocks_/mockData';
 /* eslint-env mocha */
 
 describe('Intro', () => {

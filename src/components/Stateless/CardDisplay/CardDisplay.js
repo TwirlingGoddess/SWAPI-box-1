@@ -3,7 +3,7 @@ import React from 'react';
 import Card from '../Card/Card';
 import PropTypes from 'prop-types';
 
-const CardDisplay = ({selectedData,findCard,favorites}) => {
+const CardDisplay = ({selectedData, findCard, favorites}) => {
   let clicked;
   const displayCards = selectedData.map((data, index) => {
     const findFavorites = favorites.map(favCard => favCard.id);

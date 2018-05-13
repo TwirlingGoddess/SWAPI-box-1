@@ -4,6 +4,7 @@ import Helper from '../../Helper/Helper'
 import { shallow } from 'enzyme';
 import { mockPeopleApiResponse, mockPeopleObject, mockPeopleObject2, mockFavorites } from '../../../_mocks_/mockData';
 import 'jest-localstorage-mock'
+/* eslint-env mocha */
 
 describe('app', () => {
   let app

@@ -1,31 +1,30 @@
-import './Intro.css'
-import React, { Component } from 'react'
-import mainAudio from '../../../assets/star-wars-theme-song.mp3'
+import './Intro.css';
+import React, { Component } from 'react';
+import mainAudio from '../../../assets/star-wars-theme-song.mp3';
 
 
 class Intro extends Component  {
   constructor() {
-    super()
+    super();
     this.state = {
       randomCrawl: '',
       crawlTitle:'',
       crawlDate: ''
-    }
+    };
   }
 
   componentDidMount = async () => {
     try {
-      const response = await fetch(`https://swapi.co/api/films`)
-      const data = await response.json()
-      const selectedFilm = await this.randomOpeningCrawl(data.results)
-    }
-    catch (error) { 
+      const response = await fetch(`https://swapi.co/api/films`);
+      const data = await response.json();
+      const selectedFilm = await this.randomOpeningCrawl(data.results);
+    } catch (error) { 
       throw new Error(error.message);
-    };
+    }
   }
   
   randomOpeningCrawl = (films) => {
-    const filmsLength = films.length
+    const filmsLength = films.length;
     const randomFilm = Math.floor(Math.random() * filmsLength) + 0;
     const randomCrawl = films[randomFilm].opening_crawl;
     const crawlTitle = films[randomFilm].title;
@@ -34,7 +33,7 @@ class Intro extends Component  {
       randomCrawl,
       crawlTitle,
       crawlDate
-    })
+    });
 
   }
 
@@ -56,9 +55,9 @@ class Intro extends Component  {
           <source src={mainAudio} />
         </audio>
       </div>
-    )
+    );
   }
 }
 
 
-export default Intro
+export default Intro;
