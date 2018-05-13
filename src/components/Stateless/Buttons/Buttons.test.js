@@ -6,10 +6,12 @@ import Buttons from './Buttons';
 describe('Buttons', () => {
   let buttons
   let apiCall
+  let displayFavorites
 
   beforeEach(() => {
     apiCall = jest.fn()
-    buttons = shallow(<Buttons apiCall={apiCall}/>);
+    displayFavorites = jest.fn()
+    buttons = shallow(<Buttons apiCall={apiCall} displayFavorites={displayFavorites}/>);
   })
   it('matches snapshot', () => {
     expect(buttons).toMatchSnapshot()
@@ -20,5 +22,11 @@ describe('Buttons', () => {
     buttons.find('.people').simulate('click')
     expect(apiCall).toHaveBeenCalledTimes(1);
     
+  })
+
+  it('should call displayFavorites on click', () => {
+    expect(displayFavorites).toHaveBeenCalledTimes(0);
+    buttons.find('.favorite').simulate('click')
+    expect(displayFavorites).toHaveBeenCalledTimes(1);
   })
 })
