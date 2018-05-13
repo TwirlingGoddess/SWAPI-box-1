@@ -48,7 +48,8 @@ describe('Helper', () => {
         await expect(cleanData).toEqual(mockPeopleObject)
       })
 
-      it('calls apicallHelper function', async () => {
+      it('calls apicallHelper function with the correct parameters', async () => {
+        
         helper.apiCallHelper = jest.fn()
         const category = 'planets'
         helper.makeApiCall(category)
@@ -78,7 +79,7 @@ describe('Helper', () => {
   })
 
   describe('apiCall', () => {
-    it('calls cleanData', async () => {
+    it('calls cleanData function', async () => {
       
       helper.cleanDataFunc = jest.fn()
       helper.sendToLocalStorage = jest.fn();              
@@ -99,6 +100,7 @@ describe('Helper', () => {
   describe('cleanDataFunction', () => {
 
     it('should check the selected url and call the corresponding function', async () => {
+
       helper.vehicleObject = jest.fn();
       helper.cleanDataFunc(mockVehicleApiResponse)
       await expect(helper.vehicleObject).toHaveBeenCalled()
@@ -114,7 +116,7 @@ describe('Helper', () => {
 
   describe('peopleObject', () => {
 
-    it('returns a people object', async () => {
+    it('returns a clean people object', async () => {
       helper.nestedFetch = jest.fn().mockImplementation(() => {
         return 'Human'
       })
@@ -125,7 +127,7 @@ describe('Helper', () => {
   })
 
   describe('vehicleObject', () => {
-    it('returns a vehicle Object', async () => {
+    it('returns a clean vehicle Object', async () => {
       helper.nestedFetch = jest.fn().mockImplementation(() => {
         return 'Sail barge'
       })
@@ -136,7 +138,7 @@ describe('Helper', () => {
   })
 
   describe('planetObject', () => {
-    it('return a planet Object', async () => {
+    it('return a clean planet Object', async () => {
       helper.residentsFetch = jest.fn().mockImplementation(() => {
         return 'Alderaan'
       })

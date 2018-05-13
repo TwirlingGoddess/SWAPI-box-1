@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import CardDisplay from './CardDisplay';
+import Card from '../Card/Card'
 
 const mockProps = {
   selectedData: [],
@@ -20,6 +21,6 @@ describe('CardDisplay', () => {
   })
 
   it('renders the card component', () => {
-    expect(cardDisplay)
+    expect(cardDisplay.find(Card))
   })
 })

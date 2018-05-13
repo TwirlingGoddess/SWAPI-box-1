@@ -20,17 +20,18 @@ describe('Card', () => {
     expect(card).toMatchSnapshot();
   })
 
-  it("doesn't have a class of 'clicked' if the card has not been selected", () => {
+  it("doesn't have a class of 'favoriteCard' if the card has not been selected", () => {
+
     mockProps.clicked = false;
     expect(card.hasClass('favoriteCard')).toEqual(false);
   });
   it("has a class of 'favoriteCard' if the card has been selected", () => {
+
     mockProps.clicked = true;
     card = shallow(<Card {...mockProps} />);
   
     expect(card.hasClass('favoriteCard')).toBe(true);
   });
-
   it('calls findCard when card is clicked', () => {
     let mockProps = {
       data:{},

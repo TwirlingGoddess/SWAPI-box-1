@@ -50,7 +50,6 @@ describe('app', () => {
   describe('FindCard', () => {
     let selectedCard    
 
-   
     it('finds the selected card and pushes it to the favorites array', () => {
       selectedCard = {id: "people0", keyList: "people", Homeworld: "Tatooine", Population: "200000", Specie: "Human"} 
       app.instance().findCard(selectedCard)
