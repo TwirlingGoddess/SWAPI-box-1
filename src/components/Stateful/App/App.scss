@@ -6,9 +6,12 @@
   background-image: url('../../../assets/star_wars_kyloren_ren.gif');
   background-repeat: no-repeat;
   background-size: cover
+  font-family: 'Nanum Gothic Coding', monospace;
 }
 
-
+body {
+  font-family: 'Nanum Gothic Coding', monospace;
+}
 
 @keyframes App-logo-spin {
   from {

@@ -2,7 +2,7 @@ import React from 'react';
 import App from './App';
 import Helper from '../../Helper/Helper'
 import { shallow } from 'enzyme';
-import { mockPeopleApiResponse, mockPeopleObject } from '../../../_mocks_/mockData';
+import { mockPeopleApiResponse, mockPeopleObject, mockPeopleObject2, mockFavorites } from '../../../_mocks_/mockData';
 import 'jest-localstorage-mock'
 
 describe('app', () => {
@@ -21,7 +21,7 @@ describe('app', () => {
       helper.sendToLocalStorage = jest.fn()
     })
 
-    it.only('should update the state', async () => {
+    it('should update the state after getting the api response', async () => {
 
       window.fetch.mockImplementation(() => {
         return Promise.resolve({ 
@@ -41,7 +41,7 @@ describe('app', () => {
   })
 
   describe('componenDidMount', () => {
-    it('should set the state if there is something is local storage', () => {
+    it('should have a default of empty arrays if there is no data saved in local storage', () => {
       app.instance().componentDidMount()
       expect(app.state().favorites).toHaveLength(0)
     })
@@ -50,9 +50,7 @@ describe('app', () => {
   describe('FindCard', () => {
     let selectedCard    
 
-    beforeEach(() => {
-      
-    })
+   
     it('finds the selected card and pushes it to the favorites array', () => {
       selectedCard = {id: "people0", keyList: "people", Homeworld: "Tatooine", Population: "200000", Specie: "Human"} 
       app.instance().findCard(selectedCard)
@@ -71,19 +69,24 @@ describe('app', () => {
 
     it('checks for duplicates', () => {
       const expectedResult = mockPeopleObject
-      app.setState({
-        favorites: mockPeopleObject
-      })
+      app.state().favorites = mockPeopleObject
+    
       selectedCard = {id: "people0", keyList: "people", Homeworld: "Tatooine", Population: "200000", Specie: "Human"} 
       app.instance().addCardToFavorites(selectedCard)
       expect(app.state().favorites).toEqual(expectedResult);
+    })
+
+    it('adds cards to the favorites array', () => {
+ 
+      app.instance().addCardToFavorites(mockPeopleObject2)
+      expect(app.state().favorites).toEqual(mockFavorites)
     })
   })
 
   describe('displayFavorites', () => {
     let selectedCard    
 
-    it('checks for duplicates', () => {
+    it('updated the selectedData state to the favorites array', () => {
       const expectedResult = mockPeopleObject
       app.setState({
         favorites: mockPeopleObject

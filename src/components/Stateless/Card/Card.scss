@@ -10,13 +10,19 @@
   color: white;
   line-height: 9vh;
   cursor: pointer;
+  overflow: scroll;
+  font-family: 'Nanum Gothic Coding', monospace;  
+  
+}
+
+b{
+  color:#efe48cc9
 }
 
 .favoriteBar {
   background-image:url('https://www.shareicon.net/data/2015/09/14/100862_star-wars_512x512.png');
   width: 100%;
   background-size: 6vh;
-  background-color: #be813c;
   background-repeat: no-repeat;
   max-height: 10vh;
   overflow: scroll;
@@ -31,10 +37,11 @@
   color: white;
   line-height: 9vh;
   cursor: pointer;
-  background: -webkit-linear-gradient(transparent, transparent),
-  -webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgba(163,126,67,1) 45%, rgba(145,112,59,1) 61%, rgba(213,173,109,1) 100%);
+  background-color: #000000e0;  
   background: -o-linear-gradient(transparent, transparent);
   box-shadow: 1px -2px 20px 2px #1602c5ad;
+  overflow: scroll;
+  
   
 }
 

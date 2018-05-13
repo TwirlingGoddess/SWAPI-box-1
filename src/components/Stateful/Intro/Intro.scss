@@ -1,7 +1,9 @@
 .filmText {
-  color: white;
+  color: yellow;
   padding: 4vh;
   font-size: 7vh;
+  font-family: 'Nanum Gothic Coding', monospace;
+  
 }
 
 .crawl {
@@ -17,11 +19,12 @@
   position: relative;
   background-color: black;
   font-size: 5vh;
-  color: #faebd794;
+  color: yellowgreen;
   text-align: center;
-  text-shadow: 1px 1px darkred
+  text-shadow: 1px 1px darkred;
+  font-family: 'Nanum Gothic Coding', monospace;
+  
 }
-
 
 .intro {
   position: absolute;
@@ -30,13 +33,15 @@
   z-index: 1;
   -webkit-animation: intro 6s ease-out 1s;
   animation: intro 6s ease-out 1s;
-  color: rgb(238, 75, 75);
+  color: yellow;
   font-weight: 400;
-  font-size: 12vh;
+  font-size: 11vh;
   width: 50%;
-  text-shadow: 2px 2px #0c0b0b;
+  text-shadow: 2px 2px rgb(0, 0, 0);
   margin: auto;
   opacity: 0;
+  font-family: 'Nanum Gothic Coding', monospace;
+  
 }
 
 @keyframes intro {
@@ -103,6 +108,7 @@ p {
 
 .title, .subtitle {
   text-align: center;
+  font-family: 'Nanum Gothic Coding', monospace;  
 }
 
 @keyframes scroll {

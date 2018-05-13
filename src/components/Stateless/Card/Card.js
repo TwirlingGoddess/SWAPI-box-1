@@ -8,12 +8,12 @@ const Card = ({data, id, clicked, findCard}) => {
   return (
     <div className={clicked ? 'favoriteCard' : 'card'  } onClick={() => findCard(data)}>
       <div className='favoriteBar'>
-        <h2 className='name'>{'Name' + card.Name}</h2>
+        <h2 className='name'>{'Name: ' + card.Name}</h2>
       </div> 
       <div className='cardText'> 
         {cardKeys.map((key,index) => {
-          if (index > 1) {
-            return <h2>{key}: {data[key]}</h2>
+          if (index > 2) {
+            return <h2><b>{key}:</b> {data[key]}</h2>
           }
         })}
         <div className='redidentsBox'>

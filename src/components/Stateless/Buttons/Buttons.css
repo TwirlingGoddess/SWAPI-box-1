@@ -10,7 +10,8 @@ button {
   font-size: 4vh;
   background-repeat: space;
   margin: 1vh;
-  cursor: pointer; }
+  cursor: pointer;
+  font-family: 'Nanum Gothic Coding', monospace; }
 
 a {
   color: white;
