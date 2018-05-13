@@ -1,54 +1,60 @@
+
+$main-font : 'Nanum Gothic Coding', monospace;
+$yellow-font : yellow;
+$black-color :  black;
+$card-font-size: 4vh;
+
 .card {
-  text-align: center;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  max-height: 60vh;
-  width: 36vh;
   background-color: #000000e0;
   box-shadow: 1px -2px 20px 2px #ff000091;
-  margin-bottom: 7vh;
+  box-sizing: border-box;
   color: white;
-  line-height: 9vh;
   cursor: pointer;
+  font-family: $main-font;  
+  line-height: 9vh;
+  margin-bottom: 7vh;
+  max-height: 60vh;
   overflow: scroll;
-  font-family: 'Nanum Gothic Coding', monospace;  
+  text-align: center;
+  width: 36vh;
 }
 
-b{
+b {
   color:#efe48cc9
 }
 
 .favoriteBar {
   background-image:url('http://www.freepngimg.com/download/star/2-gray-star-png-image.png');
-  width: 100%;
-  background-size: 4vh;
   background-repeat: no-repeat;
+  background-size: $card-font-size;
   max-height: 10vh;
   overflow: scroll;
+  width: 100%;
 }
 
 .favoriteBarActive {
   background-image: url('https://clipart.info/images/ccovers/1495916688christmas-tree-star-png-image-gallery-11.png');
-  width: 100%;
-  background-size: 4vh;
   background-repeat: no-repeat;
+  background-size: $card-font-size;
   max-height: 10vh;
   overflow: scroll;
+  width: 100%;
 }
 
 .favoriteCard {
-  text-align: center;
-  box-sizing: border-box;
-  max-height: 60vh;
-  width: 36vh;
-  margin-bottom: 7vh;
-  color: white;
-  line-height: 9vh;
-  cursor: pointer;
   background-color: #000000e0;  
   background: -o-linear-gradient(transparent, transparent);
   box-shadow: 1px -2px 20px 2px #1602c5ad;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  line-height: 9vh;
+  margin-bottom: 7vh;
+  max-height: 60vh;
   overflow: scroll;
+  text-align: center;
+  width: 36vh;
 }
 
 .cardText {
@@ -63,8 +69,4 @@ b{
 
 h2 {
   font-size: 2.5vh;
-}
-
-.residentsBox {
-
 }

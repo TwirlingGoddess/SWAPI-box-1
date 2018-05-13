@@ -1,13 +1,13 @@
 
 .cardCointainer {
-  padding: 11vh;
+  -ms-flex-pack: distribute;
   background-image: url('../../../assets/ea_star_wars_darth_vader.0.jpg');
-  margin: auto;
+  background-size: cover;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  background-size: cover;
   flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
   min-height: 100vh;
+  padding: 11vh;
 }

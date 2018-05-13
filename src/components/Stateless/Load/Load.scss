@@ -14,20 +14,19 @@
 }
 
 .background {
-  padding-top: 5%;
-  height: 100vh;
   background-color: black;
   box-sizing: border-box
+  height: 100vh;
+  padding-top: 5%;
 }
 
 .videoBox h2 {
-  position: absolute;
-  font-size: 10vh;
   color: yellow;
-  text-shadow: 2px 2px rgb(2, 1, 1);
-  margin-top: 30vh;
-  margin-left: 30%;
   font-family: 'Nanum Gothic Coding', monospace;
-  
+  font-size: 10vh;
+  margin-left: 30%;
+  margin-top: 30vh;
+  position: absolute;
+  text-shadow: 2px 2px rgb(2, 1, 1);
 }
 
