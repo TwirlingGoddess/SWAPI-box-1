@@ -13,14 +13,6 @@ class Intro extends Component  {
     }
   }
 
-  // componentDidMount () {
-  //   fetch(`https://swapi.co/api/films`)
-  //     .then((response) => response.json())
-  //     .then(response => this.randomOpeningCrawl(response.results)).catch(error => { 
-  //       throw new Error(error.message);
-  //     });
-  // }
-
   componentDidMount = async () => {
     try {
       const response = await fetch(`https://swapi.co/api/films`)

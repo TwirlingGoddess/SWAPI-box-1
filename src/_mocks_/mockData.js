@@ -136,12 +136,35 @@ const mockFavorites = [
   }
 ]
 
+const filmCrawlResponse = [{
+  crawl: 'Film Crawl',
+  title: 'Movie Title',
+  date: '1982-09-18',
+  opening_crawl: 'There is unrest in the Galactic'},
+  {
+  crawl: 'Film Crawl',
+  title: 'Movie Title',
+  date: '1982-09-18',
+  opening_crawl: 'There is unrest in the Galactic'
+}];
+
+const filmCrawl = {
+  crawl: 'Film Crawl',
+  title: 'Movie Title',
+  date: '1982-09-18',
+  opening_crawl: 'There is unrest in the Galactic'
+}
+
+
+
 
 export { mockPlanetApiResponse, 
   mockVehicleApiResponse, 
   mockPeopleApiResponse, 
   mockPeopleObject, 
   mockPeopleObject2,
-  mockFavorites
+  mockFavorites,
+  filmCrawl,
+  filmCrawlResponse
 };
 

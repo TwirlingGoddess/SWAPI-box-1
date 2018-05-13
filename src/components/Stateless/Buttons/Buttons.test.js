@@ -1,16 +1,24 @@
-// import React from 'react';
-// import { shallow, mount } from 'enzyme';
-// import Buttons from './Buttons';
+import React from 'react';
+import { shallow, mount } from 'enzyme';
+import Buttons from './Buttons';
 
 
-// describe('Buttons', () => {
-//   let buttons
+describe('Buttons', () => {
+  let buttons
+  let apiCall
 
-//   beforeEach(() => {
-//     buttons = shallow(<Buttons />);
-//   })
+  beforeEach(() => {
+    apiCall = jest.fn()
+    buttons = shallow(<Buttons apiCall={apiCall}/>);
+  })
+  it('matches snapshot', () => {
+    expect(buttons).toMatchSnapshot()
+  })
 
-//   it('matches snapshot', () => {
-//     expect(buttons).toMatchSnapshot()
-//   })
-// })
+  it('should call apiCall on click', () => {
+    expect(apiCall).toHaveBeenCalledTimes(0);
+    buttons.find('.people').simulate('click')
+    expect(apiCall).toHaveBeenCalledTimes(1);
+    
+  })
+})
