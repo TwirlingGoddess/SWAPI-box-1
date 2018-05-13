@@ -1,0 +1,7 @@
+.videoBox h2 {
+  position: absolute;
+  font-size: 10vh;
+  width: 80%;
+  color: yellow;
+  text-shadow: 2px 2px #020101;
+  margin: 30vh auto; }

@@ -9,7 +9,7 @@ const Errors = () => {
   return (
     <div className='background'>
       <div className='videoBox'>
-        <h2>Erroring...</h2> 
+        <h2>Add Favorite Cards!</h2>         
       </div>
     </div>
   )
