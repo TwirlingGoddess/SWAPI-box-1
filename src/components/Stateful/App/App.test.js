@@ -66,9 +66,6 @@ describe('app', () => {
   describe('addCardFavorites', () => {
     let selectedCard    
 
-    beforeEach(() => {
-      
-    })
     it('checks for duplicates', () => {
       const expectedResult = mockPeopleObject
       app.setState({
@@ -77,6 +74,20 @@ describe('app', () => {
       selectedCard = {id: "people0", keyList: "people", Homeworld: "Tatooine", Population: "200000", Specie: "Human"} 
       app.instance().addCardToFavorites(selectedCard)
       expect(app.state().favorites).toEqual(expectedResult);
+    })
+  })
+
+  describe('displayFavorites', () => {
+    let selectedCard    
+
+    it('checks for duplicates', () => {
+      const expectedResult = mockPeopleObject
+      app.setState({
+        favorites: mockPeopleObject
+      })
+      app.instance().displayFavorites()
+      expect(app.state().selectedData).toEqual(expectedResult)
+
     })
   })
 

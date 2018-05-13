@@ -62,7 +62,6 @@ class App extends Component {
     this.setState({
       favorites: currentFavorites
     })  
-    console.log(this.state.favorites)
   }	   
 
   displayFavorites = () => {
