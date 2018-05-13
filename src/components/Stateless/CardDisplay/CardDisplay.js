@@ -1,7 +1,7 @@
 import './CardDisplay.css';
 import React from 'react';
 import Card from '../Card/Card';
-
+import PropTypes from 'prop-types';
 
 const CardDisplay = ({selectedData,findCard,favorites}) => {
   let clicked;
@@ -28,6 +28,12 @@ const CardDisplay = ({selectedData,findCard,favorites}) => {
       {displayCards}
     </div>
   );
+};
+
+Card.propTypes = {
+  selectedData: PropTypes.array,
+  findCard: PropTypes.func,
+  favorites: PropTypes.array
 };
 
 export default CardDisplay;

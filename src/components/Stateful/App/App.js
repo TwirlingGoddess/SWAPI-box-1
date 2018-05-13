@@ -6,7 +6,7 @@ import { NavLink, Route } from 'react-router-dom'
 import Header from '../../Stateless/Header/Header'
 import Helper from '../../Helper/Helper'
 import Load from '../../Stateless/Load/Load'
-import Errors from '../../Stateless/Error/Errors'
+import Errors from '../../Stateless/Error/Error'
 
 import './App.css';
 
