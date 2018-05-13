@@ -7,7 +7,7 @@ const Card = ({data, id, clicked, findCard}) => {
   const cardKeys = Object.keys(data)
   return (
     <div className={clicked ? 'favoriteCard' : 'card'  } onClick={() => findCard(data)}>
-      <div className='favoriteBar'>
+      <div className={clicked ? 'favoriteBarActive' : 'favoriteBar'}>
         <h2 className='name'>{'Name: ' + card.Name}</h2>
       </div> 
       <div className='cardText'> 
