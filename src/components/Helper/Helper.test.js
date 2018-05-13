@@ -2,7 +2,7 @@ import React from 'react';
 import Helper from './Helper';
 import { shallow } from 'enzyme';
 import { mockPlanetApiResponse, mockVehicleApiResponse, mockPeopleApiResponse, mockPeopleObject } from '../../_mocks_/mockData';
-/* eslint-env mocha */
+/* eslint-env mocha */  
 
 describe('Helper', () => { 
   let helper
@@ -48,7 +48,7 @@ describe('Helper', () => {
         expect(helper.apiCallHelper).toHaveBeenCalledWith('https://swapi.co/api/planets');
       });
 
-      it('calls fetch', () => {
+      it('calls fetch with the correct parameters', () => {
         const url = 'https://swapi.co/api/people';
         helper.apiCallHelper(url)
         helper.sendToLocalStorage = jest.fn();        

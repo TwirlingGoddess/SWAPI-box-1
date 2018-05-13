@@ -68,17 +68,16 @@ makeApiCall = (category) => {
 }
 
 apiCallHelper = async (url) => {
-  // try {
+  try {
     const response = await fetch(url);
     const parseObject = await response.json();
     const cleanData = await this.cleanDataFunc(parseObject);
     this.sendToLocalStorage(url, cleanData);
     return cleanData;
-  // }
-  // catch (error) {
-  //  console.error(error)
-  //  return error
-  // }
+  }
+  catch (error) {
+    throw new Error(error.message);
+  }
  };
 
 sendToLocalStorage = (key, selectedData) => {

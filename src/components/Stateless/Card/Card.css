@@ -44,7 +44,10 @@ b {
   background-color: #000000e0;
   background: -o-linear-gradient(transparent, transparent);
   box-shadow: 1px -2px 20px 2px #1602c5ad;
-  overflow: scroll; }
+  overflow: scroll; 
+  font-family: 'Nanum Gothic Coding', monospace;  
+  
+}
 
 .cardText {
   padding: 4vh 1vh; }
