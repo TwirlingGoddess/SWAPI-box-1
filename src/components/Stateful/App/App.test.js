@@ -21,19 +21,22 @@ describe('app', () => {
       helper.sendToLocalStorage = jest.fn()
     })
 
-    it('should update the state', async () => {
+    it.only('should update the state', async () => {
 
-      // window.fetch.mockImplementation(() => {
-      //   return Promise.resolve({ 
-      //     status: 200,
-      //     ok: true,
-      //     json: () => Promise.resolve( mockPeopleApiResponse )
-      //   })
-      // })
-      // helper.sendToLocalStorage = jest.fn()
-      // helper.makeApiCall = jest.fn()
+      window.fetch.mockImplementation(() => {
+        return Promise.resolve({ 
+          status: 200,
+          ok: true,
+          json: () => Promise.resolve( mockPeopleApiResponse )
+        })
+      })
+      helper.sendToLocalStorage = jest.fn()
+      helper.makeApiCall = jest.fn()
 
-      // await app.instance().apiCall()
+      await app.instance().apiCall()
+      expect(app.state().loading).toEqual(false)
+      expect(app.state().selectedData).toEqual(mockPeopleObject)     
+            
     })
   })
 
