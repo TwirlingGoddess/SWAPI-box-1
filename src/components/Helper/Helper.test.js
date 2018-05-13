@@ -1,7 +1,15 @@
 import React from 'react';
 import Helper from './Helper';
 import { shallow } from 'enzyme';
-import { mockPlanetApiResponse, mockVehicleApiResponse, mockPeopleApiResponse, mockPeopleObject } from '../../_mocks_/mockData';
+import { 
+  mockVehicleApiResponse, 
+  mockPeopleApiResponse, 
+  mockPeopleObject, 
+  mockParseData, 
+  vehicleData,
+  planetData,
+  parsedVehicleData,
+  parsedPlanetData } from '../../_mocks_/mockData';
 /* eslint-env mocha */  
 
 describe('Helper', () => { 
@@ -101,6 +109,40 @@ describe('Helper', () => {
       helper.peopleObject = jest.fn();
       helper.cleanDataFunc(mockVehicleApiResponse)
       await expect(helper.peopleObject).toHaveBeenCalledTimes(0)
+    })
+  })
+
+  describe('peopleObject', () => {
+
+    it('returns a people object', async () => {
+      helper.nestedFetch = jest.fn().mockImplementation(() => {
+        return 'Human'
+      })
+      const expected = mockPeopleObject;
+      const result = await helper.peopleObject(mockParseData)
+      expect(result).toEqual(expected)
+    })
+  })
+
+  describe('vehicleObject', () => {
+    it('returns a vehicle Object', async () => {
+      helper.nestedFetch = jest.fn().mockImplementation(() => {
+        return 'Sail barge'
+      })
+      const expected = vehicleData;
+      const result = await helper.vehicleObject(parsedVehicleData)
+      expect(result).toEqual(expected)  
+    })
+  })
+
+  describe('planetObject', () => {
+    it('return a planet Object', async () => {
+      helper.residentsFetch = jest.fn().mockImplementation(() => {
+        return 'Alderaan'
+      })
+      const expected = planetData;
+      const result = await helper.planetObject(parsedPlanetData)
+      expect(result).toEqual(expected)  
     })
   })
 })

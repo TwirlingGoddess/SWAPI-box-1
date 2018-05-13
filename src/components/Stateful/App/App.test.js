@@ -79,7 +79,7 @@ describe('app', () => {
     it('adds cards to the favorites array', () => {
  
       app.instance().addCardToFavorites(mockPeopleObject2)
-      expect(app.state().favorites).toEqual(mockFavorites)
+      expect(app.state().favorites).toEqual(mockPeopleObject)
     })
   })
 

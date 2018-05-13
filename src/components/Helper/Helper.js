@@ -16,7 +16,6 @@ cleanDataFunc = (dataObject) => {
 }
 
 peopleObject = async (parsedData) => {
-
   const unresolvedPromises = parsedData.map( async(person,index) => {
     const keyList = 'people';
     const homeworld = await this.nestedFetch(person.homeworld);

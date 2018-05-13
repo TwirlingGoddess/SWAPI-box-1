@@ -35,7 +35,7 @@ describe('Intro', () => {
       })
       
       describe('when the status is not ok', () => {
-        it.only('throws an error if fetch fails', async () => {
+        it('throws an error if fetch fails', async () => {
           window.fetch.mockImplementation(() => Promise.reject(new Error('Error')));
           const expected = new Error('Error');
           await expect(intro.instance().componentDidMount()).rejects.toEqual(expected);
@@ -45,7 +45,7 @@ describe('Intro', () => {
 
     describe('randomOpeningCrawl', () => {
 
-      it.only('sets intro state', () => {
+      it('sets intro state', () => {
         const expected = "There is unrest in the Galactic"
         intro.instance().randomOpeningCrawl(filmCrawlResponse)
         expect(intro.state().randomCrawl).toEqual(expected)
