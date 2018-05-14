@@ -15,7 +15,7 @@ Stephanie Ospina [GitHub](https://github.com/sospinar21)
 
 ### Our design:
 
-![Project Screenshot](./src/assets/starwars.mov)
+![Project Screenshot](./src/assets/giphy.gif)
 
 ## Set Up
 
