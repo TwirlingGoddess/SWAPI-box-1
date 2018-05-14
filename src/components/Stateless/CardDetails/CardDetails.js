@@ -17,6 +17,6 @@ const CardDetails = (selectedCard) => {
 };
 
 CardDetails.propTypes = {
-  selectedCard: PropTypes.obj
+  selectedCard: PropTypes.object
 };
 export default CardDetails;

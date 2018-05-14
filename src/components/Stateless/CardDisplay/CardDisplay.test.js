@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import CardDisplay from './CardDisplay';
 import Card from '../Card/Card';
+import CardDetails from '../CardDetails/CardDetails'
 /* eslint-env mocha */
 
 const mockProps = {
@@ -23,5 +24,9 @@ describe('CardDisplay', () => {
 
   it('renders the card component', () => {
     expect(cardDisplay.find(Card));
+  });
+
+  it('renders the cardDetail component', () => {
+    expect(cardDisplay.find(CardDetails));
   });
 });

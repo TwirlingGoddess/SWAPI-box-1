@@ -20,6 +20,7 @@ describe('app', () => {
       helper = new Helper();
       window.fetch = jest.fn();
       helper.sendToLocalStorage = jest.fn();
+      helper.getFromLocalStorage = jest.fn(); 
     });
 
     it('should update the state after getting the api response', async () => {
@@ -45,6 +46,13 @@ describe('app', () => {
     it('should have a default of empty arrays if there is no data saved in local storage', () => {
       app.instance().componentDidMount();
       expect(app.state().favorites).toHaveLength(0);
+    });
+
+    it('calls getFromLocalStorage', async () => {  
+      app.state().helper = new Helper();
+      app.state().helper.getFromLocalStorage = jest.fn()          
+      app.instance().componentDidMount();
+      await expect(app.state().helper.getFromLocalStorage).toHaveBeenCalled();
     });
   });
 
@@ -95,6 +103,13 @@ describe('app', () => {
       expect(app.state().selectedData).toEqual(expectedResult);
 
     });
-  });
 
+    it('if there is no favorite cards it sets the state to null', () => {
+      app.setState({
+        favorites: []
+      });
+      app.instance().displayFavorites();
+      expect(app.state().selectedData).toEqual(null);
+    })
+  });
 });
