@@ -15,6 +15,10 @@ Stephanie Ospina [GitHub](https://github.com/sospinar21)
 ### My design:
 
 ![Project Screenshot](https://media.giphy.com/media/tIwoZiw4d1dZLC8Kq5/giphy.gif)
+![Project Screenshot](./src/assets/pic.png)
+![Project Screenshot](./src/assets/phone.png)
+
+  
 
 ## Set Up
 
