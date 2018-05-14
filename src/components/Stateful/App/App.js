@@ -45,7 +45,8 @@ class App extends Component {
   }
 
   findCard = (card) => {
-    const selectedCard = this.state.selectedData.find(data => card.id === data.id);
+    const selectedCard = this.state.selectedData.find(
+      data => card.id === data.id);
     this.addCardToFavorites(selectedCard);
   }
 
