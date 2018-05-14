@@ -16,3 +16,6 @@ button {
 a {
   color: white;
   text-decoration: none; }
+
+.active {
+  color: red; }
