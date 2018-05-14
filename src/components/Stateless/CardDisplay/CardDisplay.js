@@ -30,7 +30,7 @@ const CardDisplay = ({selectedData, findCard, favorites}) => {
   );
 };
 
-Card.propTypes = {
+CardDisplay.propTypes = {
   selectedData: PropTypes.array,
   findCard: PropTypes.func,
   favorites: PropTypes.array

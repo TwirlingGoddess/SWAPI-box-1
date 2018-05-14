@@ -1,7 +1,5 @@
 import React from 'react';
 import '../Error/Error.css';
-import { Player } from 'video-react';
-import video from '../../../assets/source.gif';
 
 const Errors = () => {
 

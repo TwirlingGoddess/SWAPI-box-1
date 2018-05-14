@@ -2,14 +2,15 @@ import './Card.css';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Card = ({data, id, clicked, findCard}) => {
+const Card = ({data, clicked, findCard}) => {
   const card = data;
   const cardKeys = Object.keys(data);
   return (
-    <div className={clicked ? 'favoriteCard' : 'card'  } onClick={() => findCard(data)}>
+    <div className={clicked ? 'favoriteCard' : 'card'  } 
+      onClick={() => findCard(data)}>
       <div className={clicked ? 'favoriteBarActive' : 'favoriteBar'}>
         <h2 className='name'>{'Name: ' + card.Name}</h2>
-      </div> 
+      </div>
       <div className='cardText'> 
         {cardKeys.map((key, index) => {
           if (index > 2) {

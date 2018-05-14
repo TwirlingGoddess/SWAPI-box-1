@@ -17,7 +17,7 @@ class Intro extends Component  {
     try {
       const response = await fetch(`https://swapi.co/api/films`);
       const data = await response.json();
-      const selectedFilm = await this.randomOpeningCrawl(data.results);
+      await this.randomOpeningCrawl(data.results);
     } catch (error) { 
       throw new Error(error.message);
     }
