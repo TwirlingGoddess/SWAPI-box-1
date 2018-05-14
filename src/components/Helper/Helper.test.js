@@ -79,6 +79,13 @@ describe('Helper', () => {
         expect(window.fetch).toHaveBeenCalledTimes(1);
         expect(window.fetch).toHaveBeenCalledWith(url);
       });
+
+      it('calls fetch with the correct parameters sad path', () => {
+        const url = 'https://swapi.co/api/people';
+        helper.apiCallHelper('google');
+        helper.sendToLocalStorage = jest.fn();        
+        expect(window.fetch).not.toHaveBeenCalledWith(url);
+      });
     });
 
     describe('MakeApi call if the status is not ok', () => {
