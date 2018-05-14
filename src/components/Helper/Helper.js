@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class Helper {
 
 cleanDataFunc = (dataObject) => {
@@ -16,23 +15,32 @@ cleanDataFunc = (dataObject) => {
 }
 
 peopleObject = async (parsedData) => {
-  const unresolvedPromises = parsedData.map( async(person,index) => {
+  const unresolvedPromises = parsedData.map( async(person, index) => {
     const keyList = 'people';
     const homeworld = await this.nestedFetch(person.homeworld);
     const specieObj = await this.nestedFetch(person.species);
     const id = keyList + index;
-    return {id, keyList, Homeworld: homeworld.name, Population: homeworld.population, Specie: specieObj.name, Name: person.name};
+    return {id, keyList, 
+      Homeworld: homeworld.name, 
+      Population: homeworld.population, 
+      Specie: specieObj.name, 
+      Name: person.name};
   });
   return Promise.all(unresolvedPromises);
 }
 
 
 planetObject = async (parsedData) => {
-  const unresolvedPromises = parsedData.map(async(planet,index) => {
+  const unresolvedPromises = parsedData.map(async(planet, index) => {
     const keyList = 'planets';  
     const residents = await this.residentsFetch(planet.residents);
     const id = keyList + index;
-    return {id, keyList, Name: planet.name, Terrain: planet.terrain, Population: planet.population, Climate: planet.climate, Residents: residents};
+    return {id, keyList, 
+      Name: planet.name, 
+      Terrain: planet.terrain, 
+      Population: planet.population, 
+      Climate: planet.climate, 
+      Residents: residents};
   });
   return Promise.all(unresolvedPromises);
 }
@@ -41,7 +49,12 @@ vehicleObject = (parsedData) => {
   const vehicleArray = parsedData.map((vehicle, index) => {
     const keyList = 'vehicles'; 
     const id = keyList + index;
-    return {id, keyList, Name: vehicle.name, Model: vehicle.model, Class: vehicle.vehicle_class, Passengers: vehicle.passengers};
+    return {id, 
+      keyList, 
+      Name: vehicle.name, 
+      Model: vehicle.model, 
+      Class: vehicle.vehicle_class,  
+      Passengers: vehicle.passengers};
   });
   return vehicleArray;
 }
@@ -63,7 +76,7 @@ residentsFetch = async (residentsUrls) => {
 
 makeApiCall = (category) => {
   const url = `https://swapi.co/api/${category}`;
-  return this.apiCallHelper(url)
+  return this.apiCallHelper(url);
 }
 
 apiCallHelper = async (url) => {
@@ -73,11 +86,10 @@ apiCallHelper = async (url) => {
     const cleanData = await this.cleanDataFunc(parseObject);
     this.sendToLocalStorage(url, cleanData);
     return cleanData;
-  }
-  catch (error) {
+  } catch (error) {
     throw new Error(error.message);
   }
- };
+};
 
 sendToLocalStorage = (key, selectedData) => {
   localStorage.setItem(key, JSON.stringify(selectedData));
@@ -89,4 +101,4 @@ getFromLocalStorage = (key) => {
 
 }
 
-export default Helper 
+export default Helper; 
