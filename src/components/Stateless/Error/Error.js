@@ -3,7 +3,6 @@ import '../Error/Error.css';
 
 const Errors = () => {
 
-
   return (
     <div className='background'>
       <div className='videoBox'>

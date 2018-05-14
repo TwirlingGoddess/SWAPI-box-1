@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css';
 import Buttons from '../Buttons/Buttons';
-import { NavLink, Route } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../../../reset.css';
 import Intro from '../Intro/Intro';
 import CardDisplay from '../../Stateless/CardDisplay/CardDisplay';
-import { NavLink, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Header from '../../Stateless/Header/Header';
 import Helper from '../../Helper/Helper';
 import Load from '../../Stateless/Load/Load';
@@ -82,8 +82,13 @@ class App extends Component {
 
   render() {
     const {selectedData, favorites} = this.state;
-
-    <Route exact path='/' component={Intro} />;
+    <div>
+      <Route exact path='/' component={Intro} />;
+      <Route exact path='/load' component={Load} />
+      <Route exact path='/error' component={Errors} />
+      <Route path='/starwars' component={CardDisplay} />      
+    </div>;
+    
     if (this.state.loading === true) {
       return (
         <Load />

@@ -44,7 +44,8 @@ b {
   max-height: 60vh;
   overflow: scroll;
   text-align: center;
-  width: 36vh; }
+  width: 36vh;
+  font-family: "Nanum Gothic Coding", monospace; }
 
 .cardText {
   padding: 4vh 1vh; }

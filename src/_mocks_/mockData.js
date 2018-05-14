@@ -124,6 +124,13 @@ const mockPeopleObject2 = {
   'keyList': 'people'
 };
 
+const mockVehicles = [{'Class': 'wheeled',
+  'Model': 'Digger Crawler',
+  'Name': 'Sand Crawler', 
+  'Passengers': '30', 
+  'id': 'vehicles0', 
+  'keyList': 'vehicles'}];
+
 const mockFavorites = [
   {'Homeworld': undefined, 
     'Name': 'Luke Skywalker', 
@@ -153,7 +160,6 @@ const filmCrawlResponse = [{
   date: '1982-09-18',
   opening_crawl: 'There is unrest in the Galactic'
 }];
-
 
 const filmCrawl = {
   crawl: 'Film Crawl',
@@ -238,6 +244,6 @@ export { mockPlanetApiResponse,
   vehicleData,
   planetData,
   parsedVehicleData,
-  parsedPlanetData
+  parsedPlanetData,
+  mockVehicles
 };
-
