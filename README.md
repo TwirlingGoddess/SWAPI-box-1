@@ -15,7 +15,7 @@ Stephanie Ospina [GitHub](https://github.com/sospinar21)
 
 ### Our design:
 
-![Project Screenshot](./src/assets/giphy.gif)
+![Project Screenshot](https://media.giphy.com/media/tIwoZiw4d1dZLC8Kq5/giphy.gif)
 
 ## Set Up
 
