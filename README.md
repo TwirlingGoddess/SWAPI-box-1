@@ -1,6 +1,6 @@
 # SWAPIbox
 
-![Project Screenshot](./src/assets/pic.png)
+![Project Screenshot](https://media.giphy.com/media/tIwoZiw4d1dZLC8Kq5/giphy.gif)
 
  The point of this project was to take static data files and, using React, display the data to the page. Using Jest and Enzyme, we built a test suite for the application.
 
@@ -21,7 +21,7 @@ Stephanie Ospina [GitHub](https://github.com/sospinar21)
 
 ### My design:
 
-![Project Screenshot](https://media.giphy.com/media/tIwoZiw4d1dZLC8Kq5/giphy.gif)
+![Project Screenshot](./src/assets/pic.png)
 
   
 
