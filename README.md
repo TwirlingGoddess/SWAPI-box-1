@@ -1,6 +1,13 @@
 # SWAPIbox
 
-The point of this project 
+![Project Screenshot](./src/assets/pic.png)
+
+ The point of this project was to take static data files and, using React, display the data to the page. Using Jest and Enzyme, we built a test suite for the application.
+
+##Built with
+* React
+* SCSS
+* HTML
 
 [create-react-app](https://github.com/facebookincubator/create-react-app) boilerplate.
 
@@ -15,8 +22,6 @@ Stephanie Ospina [GitHub](https://github.com/sospinar21)
 ### My design:
 
 ![Project Screenshot](https://media.giphy.com/media/tIwoZiw4d1dZLC8Kq5/giphy.gif)
-![Project Screenshot](./src/assets/pic.png)
-![Project Screenshot](./src/assets/phone.png)
 
   
 
