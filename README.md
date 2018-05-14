@@ -4,16 +4,15 @@ The point of this project
 
 [create-react-app](https://github.com/facebookincubator/create-react-app) boilerplate.
 
-### Project team:
-
+### Author:
 
 Stephanie Ospina [GitHub](https://github.com/sospinar21)  
 
 ### Original comp:
 
-![Comp Spec]()  
+![Comp Spec](./src/assets/comp.png)  
 
-### Our design:
+### My design:
 
 ![Project Screenshot](https://media.giphy.com/media/tIwoZiw4d1dZLC8Kq5/giphy.gif)
 
