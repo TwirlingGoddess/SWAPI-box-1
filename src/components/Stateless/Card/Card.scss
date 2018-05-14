@@ -42,6 +42,15 @@ b {
   width: 100%;
 }
 
+.selected {
+  box-shadow: 1px -2px 20px 2px #d3d4c491;  
+}
+
+.favorite {
+  font-size: 4vh;
+  color:white;
+}
+
 .favoriteCard {
   background-color: #000000e0;  
   background: -o-linear-gradient(transparent, transparent);
@@ -70,4 +79,10 @@ b {
 
 h2 {
   font-size: 2.5vh;
+}
+
+.pic {
+  height: -webkit-fill-available;
+  background-size: cover;
+  background-image: url('http://www.freepngimg.com/download/star_wars/9-2-star-wars-jedi-png.png')
 }
