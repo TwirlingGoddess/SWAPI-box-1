@@ -62,7 +62,7 @@ ShallowWrapper {
                     onClick={[Function]}
                     to="/favorites"
           >
-                    Favorite:
+                    Favorites:
           </NavLink>
 </button>,
       ],
@@ -183,7 +183,7 @@ ShallowWrapper {
             onClick={[Function]}
             to="/favorites"
 >
-            Favorite:
+            Favorites:
 </NavLink>,
         },
         "ref": null,
@@ -195,7 +195,7 @@ ShallowWrapper {
             "activeClassName": "active",
             "ariaCurrent": "true",
             "children": Array [
-              "Favorite:",
+              "Favorites:",
               undefined,
             ],
             "className": "favorite nav",
@@ -204,7 +204,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            "Favorite:",
+            "Favorites:",
             undefined,
           ],
           "type": [Function],
@@ -262,7 +262,7 @@ ShallowWrapper {
                         onClick={[Function]}
                         to="/favorites"
             >
-                        Favorite:
+                        Favorites:
             </NavLink>
 </button>,
         ],
@@ -383,7 +383,7 @@ ShallowWrapper {
               onClick={[Function]}
               to="/favorites"
 >
-              Favorite:
+              Favorites:
 </NavLink>,
           },
           "ref": null,
@@ -395,7 +395,7 @@ ShallowWrapper {
               "activeClassName": "active",
               "ariaCurrent": "true",
               "children": Array [
-                "Favorite:",
+                "Favorites:",
                 undefined,
               ],
               "className": "favorite nav",
@@ -404,7 +404,7 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
-              "Favorite:",
+              "Favorites:",
               undefined,
             ],
             "type": [Function],

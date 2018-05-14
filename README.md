@@ -15,7 +15,7 @@ Stephanie Ospina [GitHub](https://github.com/sospinar21)
 
 ### Our design:
 
-![Project Screenshot](./src/assets/HeadCount2.png)
+![Project Screenshot](./../src/components/assets/starwars.mp4)
 
 ## Set Up
 
