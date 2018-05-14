@@ -18,7 +18,7 @@ const Buttons = ({apiCall, favoritesLength, displayFavorites}) => {
         onClick={() => apiCall('vehicles')}>Vehicles</NavLink></button>
       <button><NavLink to='/favorites'
         className='favorite nav'
-        onClick={() => displayFavorites()}>Favorite:{favoritesLength}
+        onClick={() => displayFavorites()}>Favorites:{favoritesLength}
       </NavLink></button>
     </div>
   );

@@ -3,10 +3,10 @@
   background-color: black;
   border-color: #9ecaed;
   box-shadow: 0 0 10px #9ecaed;
-  height: 14vh;
   outline: none;
   text-align: center;
-  width: 100%; }
+  width: 100%;
+  padding-top: 2vh; }
 
 .logo {
   background-image: url("../../../assets/SWFotJFAE_RedLogo.png");
@@ -17,3 +17,9 @@
   margin: 1vh auto auto 5vh;
   position: absolute;
   width: 15vw; }
+
+@media only screen and (max-width: 1130px) {
+  .logo {
+    margin: auto;
+    width: 22vh;
+    position: static; } }
