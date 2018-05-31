@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/Stateful/App/App';
-import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 
@@ -12,4 +11,4 @@ const router = (
   </Router>
 );
 ReactDOM.render(router, document.getElementById('root'));
-registerServiceWorker();
+

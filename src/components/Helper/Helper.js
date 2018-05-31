@@ -1,6 +1,11 @@
-import React from 'react';
+
 
 class Helper {
+  
+  makeApiCall = (category) => {
+    const url = `https://swapi.co/api/${category}`;
+    return this.apiCallHelper(url);
+  }
 
 cleanDataFunc = (dataObject) => {
   if (dataObject.next.includes('people')) {
@@ -74,10 +79,6 @@ residentsFetch = async (residentsUrls) => {
   return Promise.all(unresolvedPromises);
 }
 
-makeApiCall = (category) => {
-  const url = `https://swapi.co/api/${category}`;
-  return this.apiCallHelper(url);
-}
 
 apiCallHelper = async (url) => {
   try {
